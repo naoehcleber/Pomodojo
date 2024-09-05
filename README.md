@@ -19,7 +19,7 @@
   <br>
   
   __Confirmação__: Para que o perfil personalizado esteja funcionando corretamente, você deve ter registrado suas preferências, desafios e metas de estudo. O sistema deve estar monitorando e atualizando seu progresso regularmente com base nas informações fornecidas.
-
+  
   <br>
 </details>
 
@@ -40,6 +40,12 @@
   <br>
   
   __Confirmação__: Para que a personalização dos ciclos Pomodoro esteja funcionando, você deve ter configurado corretamente a duração dos períodos de trabalho e pausas, bem como qualquer período de descanso prolongado. As novas configurações devem estar ativas durante os ciclos de estudo.
+
+  __Sketch__:
+
+  <br>
+  
+  <img src="https://github.com/user-attachments/assets/499d180c-fdeb-4e55-815c-ceee20624bb1" alt="Personalização dos Ciclos Pomodoro" width="300">
 
   <br>
 </details>
@@ -62,6 +68,12 @@
   
   __Confirmação__: Para que a funcionalidade de tarefas e metas diárias esteja funcionando corretamente, você deve ter criado suas listas de tarefas e definido as prioridades. Além disso, as metas diárias ou semanais devem estar visíveis e atualizadas conforme as tarefas são marcadas como concluídas.
 
+  __Sketch__:
+
+  <br>
+  
+  <img src="https://github.com/user-attachments/assets/8e6561a4-6660-48cb-b352-2c9d6a68b35d" alt="Metas Diárias" width="300">
+
   <br>
 </details>
 
@@ -83,6 +95,12 @@
   
   __Confirmação__: Para que a integração com técnicas de foco funcione, você deve ter selecionado e ativado os sons de fundo, ruído branco ou playlists desejadas. O áudio deve estar ajustado de acordo com suas preferências e ser reproduzido durante os ciclos de estudo.
 
+  __Sketch__:
+
+  <br>
+
+  <img src="https://github.com/user-attachments/assets/a8982860-5819-4bc8-a77d-b99f08ff2562" alt="Integração de Técnicas de Foco" width="300">
+
   <br>
 </details>
 
@@ -103,6 +121,12 @@
   <br>
   
   __Confirmação__: Para que os relatórios e o feedback de progresso estejam funcionando corretamente, o sistema deve estar gerando relatórios detalhados com base no tempo gasto em cada tarefa e no progresso em relação às metas. O feedback positivo deve ser fornecido para ajudar a manter a motivação.
+
+  __Sketch__:
+
+  <br>
+
+  <img src="https://github.com/user-attachments/assets/a5d593c1-4d6a-4d3c-b364-0818dd7de83f" alt="Relatórios e Feedback de Progresso" width="300">
 
   <br>
 </details>
@@ -145,6 +169,12 @@
   <br>
   
   __Confirmação__: Para que o histórico de concentração funcione corretamente, você deve registrar os momentos específicos de concentração e distração. O sistema deve estar armazenando essas informações para que você possa revisar e identificar padrões.
+
+  __Sketch__:
+
+  <br>
+
+  <img src="https://github.com/user-attachments/assets/e61a3370-caf4-4a6b-aed1-f27293a2ed25" alt="Histórico de Concentração" width="300">
 
   <br>
 </details>

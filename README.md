@@ -1,5 +1,13 @@
 # Pomodojo
 
+# Backlog
+
+<br>
+
+  <img src="https://github.com/user-attachments/assets/5279ffe4-b0c9-4282-aa29-c8f8aeb3aa49" alt="Backlog" width="600">
+
+<br>
+
 # Histórias
 
 <details>
@@ -10,7 +18,7 @@
 
   <br>
   
-  __Cartão__: Criação e Monitoramento de Perfil
+  __Cartão__: Registro e Perfil do Usuário
 
   <br>
   
@@ -240,15 +248,6 @@
   __Confirmação__: Para que o suporte e a comunidade estejam funcionando corretamente, você deve ter acesso à área de comunidade dentro do aplicativo, onde pode compartilhar e interagir com outros usuários. Além disso, os recursos de suporte emocional, como meditações guiadas e exercícios de respiração, devem estar disponíveis e funcionais para ajudar no suporte emocional e no bem-estar geral.
 
   <br>
-</details>
-
-<details>
-  <summary>Backlog</summary>
-  
-  ![chrome_tPmjUMf3J6](https://github.com/user-attachments/assets/5279ffe4-b0c9-4282-aa29-c8f8aeb3aa49)
-
-</details>
-
 ## License
 
 MIT

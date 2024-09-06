@@ -25,7 +25,9 @@
   __Conversa__: Definição das preferências e desafios específicos. Estabelecimento de metas de estudo e acompanhamento do progresso. Implementação de atualizações contínuas no perfil.
   
   <br>
-  
+
+# License
+MID
   __Confirmação__: Para que o perfil personalizado esteja funcionando corretamente, você deve ter registrado suas preferências, desafios e metas de estudo. O sistema deve estar monitorando e atualizando seu progresso regularmente com base nas informações fornecidas.
   
   <br>
@@ -248,6 +250,8 @@
   __Confirmação__: Para que o suporte e a comunidade estejam funcionando corretamente, você deve ter acesso à área de comunidade dentro do aplicativo, onde pode compartilhar e interagir com outros usuários. Além disso, os recursos de suporte emocional, como meditações guiadas e exercícios de respiração, devem estar disponíveis e funcionais para ajudar no suporte emocional e no bem-estar geral.
 
   <br>
+</details>
+
 ## License
 
 MIT

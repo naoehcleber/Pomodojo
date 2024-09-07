@@ -266,6 +266,10 @@
   <br>
 </details>
 
+# Screencast
+
+https://github.com/user-attachments/assets/12d8a2f4-8312-4b47-bef0-f54aea24c1da
+
 ## License
 
 MIT

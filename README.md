@@ -7,16 +7,16 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Microsoft Azure](https://img.shields.io/badge/microsoft%20azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white)
 
-### Ferramentas adicionais:
+#### Ferramentas adicionais:
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white)
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 
-# [Figma](https://www.figma.com/proto/RkFcA2CyM8ZrPGlNXGCUvg/Projeto-Ana-Bia?node-id=6-24&t=PlooXrvCs5Y24Ol0-1)
+## [Protótipo Lo-Fi (Figma)](https://www.figma.com/proto/RkFcA2CyM8ZrPGlNXGCUvg/Projeto-Ana-Bia?node-id=6-24&t=PlooXrvCs5Y24Ol0-1)
 
-# Backlog
+## Backlog
 
 <br>
 
@@ -24,7 +24,7 @@
 
 <br>
 
-# Histórias
+## Histórias
 
 <details>
   <summary>&#x2610; Registro e Perfil do Usuário</summary>
@@ -65,9 +65,9 @@
   
   __Confirmação__: Para que a personalização dos ciclos Pomodoro esteja funcionando, você deve ter configurado corretamente a duração dos períodos de trabalho e pausas, bem como qualquer período de descanso prolongado. As novas configurações devem estar ativas durante os ciclos de estudo.
 
-  __Sketch__:
-
   <br>
+
+  __Sketch__:
   
   <img src="https://github.com/user-attachments/assets/499d180c-fdeb-4e55-815c-ceee20624bb1" alt="Personalização dos Ciclos Pomodoro" width="300">
 
@@ -92,9 +92,9 @@
   
   __Confirmação__: Para que a funcionalidade de tarefas e metas diárias esteja funcionando corretamente, você deve ter criado suas listas de tarefas e definido as prioridades. Além disso, as metas diárias ou semanais devem estar visíveis e atualizadas conforme as tarefas são marcadas como concluídas.
 
-  __Sketch__:
-
   <br>
+
+  __Sketch__:
   
   <img src="https://github.com/user-attachments/assets/8e6561a4-6660-48cb-b352-2c9d6a68b35d" alt="Metas Diárias" width="300">
 
@@ -119,9 +119,9 @@
   
   __Confirmação__: Para que a integração com técnicas de foco funcione, você deve ter selecionado e ativado os sons de fundo, ruído branco ou playlists desejadas. O áudio deve estar ajustado de acordo com suas preferências e ser reproduzido durante os ciclos de estudo.
 
-  __Sketch__:
-
   <br>
+  
+  __Sketch__:
 
   <img src="https://github.com/user-attachments/assets/a8982860-5819-4bc8-a77d-b99f08ff2562" alt="Integração de Técnicas de Foco" width="300">
 
@@ -146,9 +146,9 @@
   
   __Confirmação__: Para que os relatórios e o feedback de progresso estejam funcionando corretamente, o sistema deve estar gerando relatórios detalhados com base no tempo gasto em cada tarefa e no progresso em relação às metas. O feedback positivo deve ser fornecido para ajudar a manter a motivação.
 
-  __Sketch__:
-
   <br>
+  
+  __Sketch__:
 
   <img src="https://github.com/user-attachments/assets/a5d593c1-4d6a-4d3c-b364-0818dd7de83f" alt="Relatórios e Feedback de Progresso" width="300">
 
@@ -194,9 +194,9 @@
   
   __Confirmação__: Para que o histórico de concentração funcione corretamente, você deve registrar os momentos específicos de concentração e distração. O sistema deve estar armazenando essas informações para que você possa revisar e identificar padrões.
 
-  __Sketch__:
-
   <br>
+
+  __Sketch__:
 
   <img src="https://github.com/user-attachments/assets/e61a3370-caf4-4a6b-aed1-f27293a2ed25" alt="Histórico de Concentração" width="300">
 
@@ -266,7 +266,7 @@
   <br>
 </details>
 
-# Screencast
+## Screencast
 
 https://github.com/user-attachments/assets/12d8a2f4-8312-4b47-bef0-f54aea24c1da
 

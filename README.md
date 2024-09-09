@@ -1,5 +1,13 @@
 # Pomodojo
 
+## Integrantes:
+
+- Ana Beatriz de Lima Romero (850038)
+- Guilherme Cavalcanti de Sá Barreto (849537)
+- Humberto Mota de Lima (848829)
+- João Victor Rocha Fernandes (850069)
+- João Constantino Pontes Barreto (849518)
+
 ## Tecnologias utilizadas:
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)

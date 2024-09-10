@@ -255,22 +255,106 @@
 </details>
 
 <details>
-  <summary>&#x2610; Suporte e Comunidade</summary>
+  <summary>&#x2610; Comunidade de Apoio</summary>
   <br>
   
-  __História__: "Como usuário, eu gostaria de acessar uma comunidade de apoio dentro do aplicativo, onde eu possa compartilhar dicas, experiências e incentivar outros usuários. Também quero ter acesso a recursos de suporte emocional, como meditações guiadas e exercícios de respiração."
+  __História__: "Como usuário, eu gostaria de acessar uma comunidade dentro do aplicativo onde eu possa compartilhar dicas, experiências e incentivar outros usuários, promovendo apoio mútuo."
 
   <br>
   
-  __Cartão__: Suporte e Comunidade
+  __Cartão__: Comunidade de Apoio e Compartilhamento
   
   <br>
   
-  __Conversa__: Acesso à comunidade de apoio para compartilhar dicas e experiências. Participação em discussões e incentivo mútuo. Disponibilidade de recursos de suporte emocional, incluindo meditações guiadas e exercícios de respiração.
+  __Conversa__: Criação de uma comunidade de usuários dentro do aplicativo para compartilhamento de dicas e experiências, participação em discussões e incentivo mútuo entre os membros. Organização da comunidade para facilitar a navegação e interação entre os usuários.
 
   <br>
   
-  __Confirmação__: Para que o suporte e a comunidade estejam funcionando corretamente, você deve ter acesso à área de comunidade dentro do aplicativo, onde pode compartilhar e interagir com outros usuários. Além disso, os recursos de suporte emocional, como meditações guiadas e exercícios de respiração, devem estar disponíveis e funcionais para ajudar no suporte emocional e no bem-estar geral.
+  __Confirmação__: Para que a comunidade de apoio esteja funcionando corretamente, o usuário deve ser capaz de participar de discussões, compartilhar suas experiências e interagir com postagens de outros usuários. A interface deve ser intuitiva e promover um ambiente de troca de conhecimento e incentivo.
+  
+  <br>
+</details>
+
+<details>
+  <summary>&#x2610; Suporte Técnico</summary>
+  <br>
+  
+  __História__: "Como usuário, eu gostaria de acessar uma área de suporte dentro do aplicativo para esclarecer dúvidas, relatar problemas e receber ajuda com o funcionamento do aplicativo."
+  
+  <br>
+  
+  __Cartão__: Suporte Técnico para Dúvidas e Problemas
+  
+  <br>
+  
+  __Conversa__: Implementação de um sistema de suporte técnico para dúvidas e resolução de problemas relacionados ao aplicativo. Comunicação clara e eficiente entre usuários e equipe de suporte. Sistema de acompanhamento de tickets para monitoramento do status de solicitações.
+
+  <br>
+  
+  __Confirmação__: Para que o suporte técnico esteja funcionando corretamente, o usuário deve ser capaz de acessar facilmente uma área dedicada a dúvidas e problemas, enviar tickets de suporte e receber respostas claras e eficientes. O sistema deve permitir acompanhamento do status das solicitações de forma simples.
+
+  <br>
+</details>
+
+<details>
+  <summary>&#x2610; Sistema de Faixas</summary>
+  <br>
+  
+  __História__: "Como usuário, eu gostaria de avançar em um sistema de 'faixas' no dojo de estudos, com base no meu desempenho e progresso, para ter uma representação clara da minha evolução."
+  
+  <br>
+  
+  __Cartão__: Sistema de Faixas para o Dojo de Estudos
+  
+  <br>
+  
+  __Conversa__: Implementação de um sistema de faixas (como branca, azul, preta) baseado no tempo de estudo e nas metas alcançadas. Progresso visualizado através do sistema de faixas, incentivando o aprendizado contínuo.
+
+  <br>
+  
+  __Confirmação__: Para que o sistema de faixas esteja funcionando corretamente, o aplicativo deve monitorar o progresso do usuário, e a progressão de faixas deve ser clara e baseada no tempo de estudo e nas metas atingidas. O usuário deve poder visualizar sua faixa atual e acompanhar o próximo nível a ser alcançado.
+
+  <br>
+</details>
+
+<details>
+  <summary>&#x2610; Sensei Virtual para Feedback Personalizado</summary>
+  <br>
+  
+  __História__: "Como usuário, eu gostaria de receber feedback personalizado de um 'sensei' virtual no dojo de estudos, que me guie e motive com base no meu desempenho e progresso, para me ajudar a melhorar constantemente."
+  
+  <br>
+  
+  __Cartão__: Sensei Virtual para Feedback Personalizado
+  
+  <br>
+  
+  __Conversa__: Criação de um sensei virtual que fornece feedback personalizado sobre o desempenho do usuário, destacando áreas de melhoria e comemorando metas alcançadas. O sensei deve oferecer dicas, motivação e orientações para manter o usuário engajado e focado no progresso.
+
+  <br>
+  
+  __Confirmação__: Para que o sensei virtual funcione corretamente, ele deve ser capaz de monitorar o progresso do usuário e fornecer feedback relevante e motivador, destacando pontos fortes, áreas de melhoria e sugerindo novos desafios. O feedback deve ser dinâmico e adaptado ao desempenho atual do usuário, promovendo um acompanhamento contínuo e personalizado.
+
+  <br>
+</details>
+
+<details>
+  <summary>&#x2610; Gamificação do Dojo de Estudos</summary>
+  <br>
+  
+  __História__: "Como usuário, eu gostaria de ter elementos de gamificação no dojo de estudos, como conquistas, pontos e recompensas, para tornar minha jornada de aprendizado mais envolvente e divertida."
+  
+  <br>
+  
+  __Cartão__: Gamificação no Dojo de Estudos
+  
+  <br>
+  
+  __Conversa__: Implementação de elementos de gamificação, como conquistas desbloqueáveis, sistema de pontos, níveis e recompensas. Cada tarefa concluída e meta alcançada resulta em pontos que contribuem para o progresso, permitindo desbloquear novas conquistas e recompensas que incentivam a continuidade dos estudos.
+
+  <br>
+  
+  __Confirmação__: Para que a gamificação esteja funcionando corretamente, o sistema deve recompensar o usuário com pontos por cada tarefa realizada e meta atingida. As conquistas devem ser desbloqueáveis com base no desempenho, e o usuário deve visualizar claramente seu progresso e recompensas, incentivando o engajamento contínuo no dojo de estudos.
 
   <br>
 </details>

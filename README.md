@@ -114,7 +114,7 @@
   <summary>&#x2610; Integração com Técnicas de Foco</summary>
   <br>
   
-  __História__: "Como usuário, eu gostaria de utilizar sons de fundo calmantes, ruído branco ou playlists específicas para melhorar minha concentração durante os ciclos de estudo."
+  __História__: "Como usuário, eu gostaria de utilizar sons de fundo calmantes ou ruído branco para melhorar minha concentração durante os ciclos de estudo."
 
   <br>
   
@@ -122,11 +122,11 @@
   
   <br>
   
-  __Conversa__: Seleção de sons de fundo, ruído branco ou playlists para concentração. Ajuste das opções de áudio durante os ciclos de estudo. Implementação de controles de volume e seleção de preferências.
+  __Conversa__: Seleção de sons de fundo ou ruído branco para concentração. Ajuste das opções de áudio durante os ciclos de estudo. Implementação de controles de volume e seleção de preferências.
 
   <br>
   
-  __Confirmação__: Para que a integração com técnicas de foco funcione, você deve ter selecionado e ativado os sons de fundo, ruído branco ou playlists desejadas. O áudio deve estar ajustado de acordo com suas preferências e ser reproduzido durante os ciclos de estudo.
+  __Confirmação__: Para que a integração com técnicas de foco funcione, você deve ter selecionado e ativado os sons de fundo desejadas ou ruído branco. O áudio deve estar ajustado de acordo com suas preferências e ser reproduzido durante os ciclos de estudo.
 
   <br>
   

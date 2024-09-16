@@ -1,0 +1,19 @@
+.header {
+    padding: 1%;
+    text-align: center;
+    background: #7A73FF;
+    color: white;
+    font-size: large;
+}
+.main {
+    padding: 30%;
+    text-align: center;
+    background: #e8e7fa;
+    color: white;
+    font-size: large;
+}
+.profile{
+    text-align: center;
+    font-size: medium;
+    
+}

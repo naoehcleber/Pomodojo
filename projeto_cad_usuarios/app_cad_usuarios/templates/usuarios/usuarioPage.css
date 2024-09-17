@@ -6,8 +6,10 @@
     font-size: large;
 }
 .main {
+    display: flex;
     padding: 30%;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
     background: #e8e7fa;
     color: white;
     font-size: large;
@@ -35,4 +37,39 @@
 .barraDeProgresso1{
     position: absolute;
     border-radius: 10%;
+}
+
+
+.footer{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+
+}
+.nav{
+   width: 100%;
+   max-width: 650px;
+   height: 60px;
+   border-radius: 12px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    background-color: #D9D9D9;
+    box-shadow: 0 5px 6px 1px #000;
+}
+a{
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    font-size: 32px;
+    border-radius: 5%;
+}
+a:active{
+    background-color: #7A73FF
+}
+a:hover{
+    background-color: #7a73ffa1;
 }

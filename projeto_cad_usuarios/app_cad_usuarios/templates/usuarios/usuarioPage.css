@@ -16,4 +16,23 @@
     text-align: center;
     font-size: medium;
     
+    
+}
+
+.profile-img{
+    position: absolute;
+    max-width: 10%;
+    width: 10%;
+    
+}
+
+.barrasDeProgresso{
+    position: relative;
+    border-radius: 10%;
+
+}
+
+.barraDeProgresso1{
+    position: absolute;
+    border-radius: 10%;
 }

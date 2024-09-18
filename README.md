@@ -22,6 +22,7 @@
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white)
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 
 ## [Protótipo Lo-Fi (Figma)](https://www.figma.com/proto/RkFcA2CyM8ZrPGlNXGCUvg/Projeto-Ana-Bia?node-id=6-24&t=PlooXrvCs5Y24Ol0-1)
 

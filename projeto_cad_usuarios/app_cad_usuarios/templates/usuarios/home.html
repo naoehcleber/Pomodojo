@@ -1,7 +1,7 @@
 {% extends 'usuarios/base.html' %}
 {% block conteudo %}
 <form action="{% url 'listagem_usuarios' %}" method="post">
-{% csrf_token %}
+    {% csrf_token %}
 <div style="text-align: center;" class="container">
 <h1>Cadastro de Usuários</h1>
 Nome <input name="nome" class="form-control-sm" type="text">

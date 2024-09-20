@@ -1,8 +1,8 @@
 from django.shortcuts import render
-
+from .models import Usuario
 # Create your views here.
 def home(requests):
-    return render(requests, 'usuarios/home.html')
+    return render(requests, 'usuarios/usuarioPage.html')
 
 def usuarios(requests):
     novo_usuario = Usuario()
@@ -14,4 +14,7 @@ def usuarios(requests):
         'usuarios'  : Usuario.objects.all()
     }
     #retorna os dados para a pagina de listagem de usuarios
-    return render(requests, 'usuarios/usuarios.hmtl', usuarios)
+    return render(requests, 'usuarios/usuarios.html', usuarios)
+
+def usuarioPage(requests):
+    return render(requests, 'usuarios/usuarioPage.html', usuarioPage)

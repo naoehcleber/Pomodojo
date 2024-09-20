@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil do Usuario</title>
-    <link rel="stylesheet" href="usuarioPage.css">
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'usuarioPage.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 
     
 </head>
 <body>
     <div class = "header">
-        <img src="../Capturar.PNG" class="logo">
+        <img src="{%static 'images/Capturar.PNG' %}" class="logo">
 
     </div>
     <div class="main">
         <div class="profile">
             <div class="profile-img">
-                <img src="../Ellipse 4.png" class="ellipse">
+                <img src="{%static 'images/Ellipse 4.PNG' %}" class="ellipse">
             </div>
             <div class="profile-name">
                 <p>User Name</p>
@@ -37,14 +38,17 @@
                 <p>Metas de ciclos</p>
             </div>
         </div>
+        <div>
+            <button id="personalizar" type="button"><b>Personalizar</b></button>
+        </div>
     </div>
 
     <div class="footer">
         <div class="nav">
-            <a href="../usuarios/usuarioPage.html"><img src="../dojo 1.svg"></a>
-            <a href=""><img src="../calendario 1.svg"></a>
-            <a href=""><img src="../5803966_checklist_clipboard_task_todo_icon 1.svg"></a>
-            <a href=""><img src="../perfil 1.svg"></a>
+            <a href="../usuarios/usuarioPage.html"><img src="{% static 'images/footer/dojo 1.svg' %}"></a>
+            <a href=""><img src="{%static 'images/footer/calendario 1.svg' %}"></a>
+            <a href=""><img src="{%static 'images/footer/5803966_checklist_clipboard_task_todo_icon 1.svg' %}"></a>
+            <a href=""><img src="{%static 'images/footer/perfil 1.svg' %}"></a>
         </div>
 
     </div>

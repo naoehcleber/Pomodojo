@@ -5,20 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil do Usuario</title>
     <link rel="stylesheet" href="usuarioPage.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+    
 </head>
 <body>
     <div class = "header">
-        <img src="../Capturar.PNG">
+        <img src="../Capturar.PNG" class="logo">
 
     </div>
     <div class="main">
         <div class="profile">
-            <img src="../person-circle.svg" class="profile-img">            
+            <div class="profile-img">
+                <img src="../Ellipse 4.png" class="ellipse">
+            </div>
+            <div class="profile-name">
+                <p>User Name</p>
+            </div>
+            <div class="profile-date">
+                <p>dd/mm/yyyy</p>
+            </div>
         </div>
         <div class="barrasDeProgresso">
-            <div class="barraDeProgresso barra 1" style="width: {{ progresso1 }}%;"></div>
-            <div class="barraDeProgresso barra 1" style="width: {{ progresso2 }}%;"></div>
-            <div class="barraDeProgresso barra 1" style="width: {{ progresso3 }}%;"></div>
+            <div class="barrasDeProgressoIndividual">
+                <p>Concentração</p>
+            </div>
+            <div class="barrasDeProgressoIndividual">
+                <p>Ciclos Concluidos</p>
+            </div>
+            <div class="barrasDeProgressoIndividual">
+                <p>Metas de ciclos</p>
+            </div>
         </div>
     </div>
 

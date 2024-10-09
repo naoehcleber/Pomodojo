@@ -15,8 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from app_cad_usuarios import views
+
 
 urlpatterns = [
     #rota, view responsavel, nome de referencia
@@ -26,5 +27,5 @@ urlpatterns = [
     path('usuarios/', views.usuarios, name = 'listagem_usuarios'),
 
     path('usuarios', views.usuarioPage, name = 'usuarioPage'),
-    
+    path('pomodoro/', include('pomodoro.urls')),
 ]

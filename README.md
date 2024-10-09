@@ -4,7 +4,6 @@
 
 - Ana Beatriz de Lima Romero (850038)
 - Guilherme Cavalcanti de Sá Barreto (849537)
-- Humberto Mota de Lima (848829)
 - João Victor Rocha Fernandes (850069)
 - João Constantino Pontes Barreto (849518)
 - Pedro Henrique Afonso dos Santos (849096)

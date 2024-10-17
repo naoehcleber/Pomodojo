@@ -3,16 +3,25 @@ body{
 }
 
 .header {
-    padding: 5%;
-    text-align: center;
-    background: #7A73FF;
+    background: #5B190A;
     color: white;
     font-size: large;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 .logo{
     object-fit: cover;
-    width: 50%;
+    height: 5%;
+    width: 5%;
+    margin-right: 5px;
 }
+
+h1{
+    align-items: center;
+    justify-content: center;
+}
+
 .main {
     display: flex;
     padding: 30%;
@@ -102,8 +111,9 @@ a{
     border-radius: 5%;
 }
 a:active{
-    background-color: #7A73FF
+    background-color: #BF0F13
 }
 a:hover{
-    background-color: #7a73ffa1;
+    background-color: #BF0F13;
 }
+

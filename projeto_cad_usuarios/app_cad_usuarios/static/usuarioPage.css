@@ -1,5 +1,6 @@
 body{
     height: 100%;
+    background-color: #EFEFEF;
 }
 
 .header {
@@ -24,12 +25,11 @@ h1{
 
 .main {
     display: flex;
-    padding: 30%;
+    padding: 10%;
     height: 55vh;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #e8e7fa;
     color: white;
     font-size: large;
     font-family: Montserrat;
@@ -58,7 +58,7 @@ h1{
 }
 
 .barrasDeProgresso{
-    display: flex;
+    display: center;
     flex-direction: column;
     flex-wrap: nowrap;
     text-align: center;
@@ -70,10 +70,11 @@ h1{
 .barrasDeProgressoIndividual{
     width: 90vw;
     height: 5vh;
-    background-color: #F3D8B9;
+    background-color: #C74646;
     border-radius: 1.5em;
     color: white;
     margin-bottom: 3vh;
+    max-width: 600px;
 }
 
 #personalizar{
@@ -91,7 +92,6 @@ h1{
     justify-content: center;
     padding-top: 3%;
     width: 100%;
-
 }
 .nav{
    width: 100%;

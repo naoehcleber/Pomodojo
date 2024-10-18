@@ -1,12 +1,17 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <title>Pomodoro Timer</title>
     <link rel="stylesheet" href="{% static 'pomodoro/pomodoro.css' %}">
     <script src="{% static 'pomodoro/pomodoro.js' %}"></script>
 </head>
+<header>
+    <img src="{%static 'images/Logo.PNG' %}" class="logo">
+    <h9 class="header-texto">PomoDojo</h9>
+</header>
 <body>
     <div class="container">
         <h1>Pomodoro Timer</h1>

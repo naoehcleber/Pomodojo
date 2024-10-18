@@ -1,8 +1,29 @@
 /* pomodoro.css */
+header {
+    background: #5B190A;
+    color: white;
+    font-size: large;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    top: 0;
+    position: relative;
+}
+
+.logo{
+    object-fit: cover;
+    height: 5%;
+    width: 5%;
+    margin-right: 5px;
+}
+.header-texto{
+    color: white;
+    font-size: xx-large;
+    font-weight: bold;
+}
 
 body {
     font-family: Arial, sans-serif;
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -16,6 +37,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100%;
 }
 
 h1 {

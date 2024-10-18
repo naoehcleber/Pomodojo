@@ -1,6 +1,7 @@
 body{
     height: 100%;
     background-color: #EFEFEF;
+    margin: 0;
 }
 
 header {
@@ -11,7 +12,7 @@ header {
     justify-content: center;
     display: flex;
     top: 0;
-    position: relative;
+    width: 100%;
 }
 .logo{
     object-fit: cover;
@@ -81,10 +82,25 @@ h1{
     color: white;
     margin-bottom: 3vh;
     max-width: 600px;
+
 }
 
 #personalizar{
-    
+    width: 20rem;
+    background-color: #D9D9D9;
+    border-radius: 3em;
+    height: 68px;
+    border: none;
+
+}
+
+#personalizar:hover{
+    border: 2px solid #BF0F13;
+}
+
+#button-text{
+    color: #000;
+    font-weight: bold;
 }
 
 
@@ -98,6 +114,7 @@ h1{
     justify-content: center;
     padding-top: 3%;
     width: 100%;
+    margin-bottom: 10px;
 }
 .nav{
    width: 100%;

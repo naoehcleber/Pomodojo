@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <!-- saved from url=(0051)https://getbootstrap.com/docs/5.3/examples/sign-in/ -->
-<html lang="en" data-bs-theme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./singin_template_files/color-modes.js.download"></script>
-
-    
+<html lang="en" data-bs-theme="dark"><head>
+  {% load static %}
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script src="{% static 'color-modes.js.download' %}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
@@ -13,9 +14,9 @@
 
     
 
-    <link rel="stylesheet" href="./singin_template_files/css@3">
+    <link rel="stylesheet" href="{% static 'singin_template.css' %}">
 
-<link href="./singin_template_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -108,7 +109,7 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="./singin_template_files/sign-in.css" rel="stylesheet">
+    <link href="{% static 'sign-in.css' %}" rel="stylesheet">
   <style type="text/css"></style><style type="text/css" id="operaUserStyle"></style></head>
   <body class="d-flex align-items-center py-4 bg-body-tertiary">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -160,7 +161,7 @@
     
 <main class="form-signin w-100 m-auto">
   <form>
-    <img class="mb-4" src="../Capturar.PNG" alt="" width="72" height="57">
+    <img class="mb-4" src="{% static 'images/Logo.PNG' %}" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
     <div class="form-floating">
@@ -178,11 +179,13 @@
         Remember me
       </label>
     </div>
-    <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+    <button class="btn btn-primary w-100 py-2" type="submit">Fazer Login</button>
+    
+    <a href="{% url 'logon' %}" class="btn btn-primary w-100 py-2">Fazer Cadastro</a>
     <p class="mt-5 mb-3 text-body-secondary">© 2024 PomoDojo, All rights reserved</p>
   </form>
 </main>
-<script src="./singin_template_files/bootstrap.bundle.min.js.download" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="{% static 'bootstrap.bundle.min.js.download' %}" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     
 

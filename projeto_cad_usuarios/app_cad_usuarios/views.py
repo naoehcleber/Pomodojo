@@ -18,3 +18,10 @@ def usuarios(requests):
 
 def usuarioPage(requests):
     return render(requests, 'usuarios/usuarioPage.html', usuarioPage)
+
+def login(requests):
+    return render(requests, 'login/singin_template.html')
+
+def logon(requests):
+    return render(requests, 'login/cadastro.html')
+

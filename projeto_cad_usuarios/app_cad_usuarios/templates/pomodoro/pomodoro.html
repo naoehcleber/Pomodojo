@@ -1,4 +1,4 @@
-   {% block conteudo %}
+{% block conteudo %}
    {% load static %}
    <!DOCTYPE html>
    <html lang="en">
@@ -10,30 +10,36 @@
    </head>
    <body>
    <div class="container">
-   <h1>Pomodoro Timer</h1>
-   <div id="timer">
-   <span id="timer-display">00:00</span>
-   </div>
-   <div class="input-time">
-   <input type="number" id="hours" placeholder="Horas" min="0" value="0">
-   <input type="number" id="minutes" placeholder="Minutos" min="0" max="59" value="25">
-   <input type="number" id="seconds" placeholder="Segundos" min="0" max="59" value="0">
-   <button id="set-time">OK</button>
-   </div>
-   <div class="input-music">
-    <label for="music">Escolha uma música:</label>
-    <select id="music">
-        <option value="none">Nenhuma</option>
-        <option value="white-noise">Ruído Branco</option>
-        <option value="classical">Música Clássica</option>
-        <option value="rain">Barulho de Chuva</option>
-    </select>
-</div>
-   <div class="buttons">
-   <button id="start-stop">Start</button>
-   <button id="reset">Reset</button>
-   </div>
+       <!-- Caixa com o Pomodoro Timer -->
+       <div class="pomodoro-box">
+           <h1>Pomodoro Timer</h1>
+           <div id="timer">
+               <span id="timer-display">00:00:00</span>
+           </div>
+           <div class="input-time">
+               <input type="number" id="hours" placeholder="Horas" min="0" value="0">
+               <input type="number" id="minutes" placeholder="Minutos" min="0" max="59" value="25">
+               <input type="number" id="seconds" placeholder="Segundos" min="0" max="59" value="0">
+               <button id="set-time">OK</button>
+           </div>
+           <div class="input-music">
+               <label for="music">Escolha uma música:</label>
+               <select id="music">
+                   <option value="none">Nenhuma</option>
+                   <option value="white-noise">Ruído Branco</option>
+                   <option value="classical">Música Clássica</option>
+                   <option value="rain">Barulho de Chuva</option>
+               </select>
+           </div>
+           <div class="buttons">
+               <button id="start-stop">Start</button>
+               <button id="reset">Reset</button>
+           </div>
+       </div>
+
+       <!-- Botão para modo noturno fora da caixa -->
+       <button id="toggle-dark-mode">Modo Escuro</button>
    </div>
    </body>
    </html>
-   {% endblock %}
+{% endblock %}

@@ -8,6 +8,7 @@
     <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="{% static 'cadastro.css' %}" rel="stylesheet">
 </head>
+
 <body>
     <section class="vh-100 bg-image"
   style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
@@ -19,7 +20,9 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-              <form>
+              <form action="logon" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
 
                 <div data-mdb-input-init class="form-outline mb-4">
                   <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
@@ -66,4 +69,5 @@
   </div>
 </section>
 </body>
+
 </html>

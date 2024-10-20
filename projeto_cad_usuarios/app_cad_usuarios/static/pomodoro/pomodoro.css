@@ -1,12 +1,12 @@
 /* Estilo da caixa do Pomodoro Timer */
 .pomodoro-box {
-    border: 2px solid #ccc;
+    border: 2px solid #ccc; /* Removido a borda colorida */
     padding: 20px;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Caixa clara no modo claro */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-bottom: 20px; /* Espaço entre a caixa e o botão de modo escuro */
+    margin-bottom: 20px;
 }
 
 /* Estilo geral da página */
@@ -24,7 +24,7 @@ h1 {
 
 #timer {
     font-size: 3rem;
-    color: #ff6347; 
+    color: #FF6F61; /* Laranja escuro */
     margin-bottom: 20px;
 }
 
@@ -56,54 +56,65 @@ button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #ff6347;
+    background-color: #FF6F61; /* Vermelho intenso */
     color: white;
     font-size: 1rem;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #ff4500
-    ff6347;
+    background-color: #C74B3A; /* Laranja escuro */
 }
 
 /* Estilo para o botão de modo noturno */
 #toggle-dark-mode {
-    background-color: #333;
+    background-color: #496A81; /* Azul acinzentado */
     color: white;
     padding: 10px 20px;
-    border: none;
+    border: 2px solid #4A4949;
     border-radius: 5px;
     cursor: pointer;
 }
 
 /* Estilo para o modo escuro */
 body.dark-mode {
-    background-color: #333;
-    color: #fff;
+    background-color: #1A1A1A; /* Cinza escuro neutro */
+    color: #FFFFFF; /* Texto branco */
 }
 
-.dark-mode {
-    background-color: #333;
-    color: white;
+body.dark-mode .pomodoro-box {
+    border: 2px solid transparent; /* Borda transparente no modo escuro */
+    background-color: #2C2C2C; /* Cinza médio para a caixa */
+    color: #FFFFFF; /* Texto branco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .dark-mode button {
-    background-color: #444;
-    color: white;
+    background-color: #FF6F61; /* Vermelho intenso */
+    color: #FFFFFF; /* Texto branco */
 }
+
 .dark-mode input {
-    background-color: #666;
-    color: white;
+    background-color: #3D3D3D; /* Cinza mais claro */
+    color: #FFFFFF; /* Texto branco */
 }
+
 .dark-mode button:hover {
-    background-color: #666;
-    color: white;
+    background-color: #C74B3A; /* Laranja escuro */
 }
+
 .dark-mode select {
-    background-color: #555;
-    color: white;
+    background-color: #555; /* Cinza escuro */
+    color: #FFFFFF; /* Texto branco */
 }
+
+/* Estilo do timer no modo escuro */
+.dark-mode #timer {
+    color: #FF6F61
+    ; /* Laranja escuro */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
 /* Ajustes para o corpo */
 body {
     margin: 0;

@@ -1,46 +1,111 @@
-/* pomodoro.css */
-
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
-}
-
-.container {
-    text-align: center;
-    background: #fff;
+/* Estilo da caixa do Pomodoro Timer */
+.pomodoro-box {
+    border: 2px solid #ccc;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px; /* Espaço entre a caixa e o botão de modo escuro */
+}
+
+/* Estilo geral da página */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 h1 {
-    font-size: 2em;
-    color: #333;
+    margin-bottom: 20px;
 }
 
 #timer {
-    font-size: 3em;
-    margin: 20px 0;
-    color: #ff6347;
+    font-size: 3rem;
+    color: #ff6347; 
+    margin-bottom: 20px;
 }
 
-.buttons button {
-    font-size: 1em;
+.input-time {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.input-time input {
+    width: 60px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-music {
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
     padding: 10px 20px;
-    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff6347;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff4500
+    ff6347;
+}
+
+/* Estilo para o botão de modo noturno */
+#toggle-dark-mode {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #ff6347;
-    color: white;
-    transition: background-color 0.3s;
 }
 
-.buttons button:hover {
-    background-color: #ff4500;
+/* Estilo para o modo escuro */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode button {
+    background-color: #444;
+    color: white;
+}
+.dark-mode input {
+    background-color: #666;
+    color: white;
+}
+.dark-mode button:hover {
+    background-color: #666;
+    color: white;
+}
+.dark-mode select {
+    background-color: #555;
+    color: white;
+}
+/* Ajustes para o corpo */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
 }

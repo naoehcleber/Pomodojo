@@ -20,14 +20,19 @@ from app_cad_usuarios import views
 
 
 urlpatterns = [
+    #redireciona a pagina inicial pra login
+    path('', views.home_redirect),
+    #admin
+    path('admin/', admin.site.urls),
+
     #rota, view responsavel, nome de referencia
-    path('', views.login, name = 'login'),
+    path('login/', views.login, name = 'login'),
     path('logon/', views.logon, name='logon'),
-    path('home', views.home, name = 'home'),
+    path('home/', views.home, name = 'home'),
 
     #usuarios.com/usuarios
-    path('usuarios/', views.usuarios, name = 'listagem_usuarios'),
+    #path('usuarios/', views.usuarios, name = 'listagem_usuarios'),
 
-    path('usuarios', views.usuarioPage, name = 'usuarioPage'),
+    path('usuarios/', views.usuarioPage, name = 'usuarioPage'),
     path('pomodoro/', include('pomodoro.urls')),
 ]

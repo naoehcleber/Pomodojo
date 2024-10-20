@@ -82,6 +82,8 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = 'app_cad_usuarios.Usuario'  # Substitua pelo caminho correto da sua app
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

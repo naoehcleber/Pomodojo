@@ -26,7 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     #rota, view responsavel, nome de referencia
-    path('login/', views.login, name = 'login'),
+    path('login/', views.login_Usuario, name = 'login'),
     path('logon/', views.logon, name='logon'),
     path('home/', views.home, name = 'home'),
 

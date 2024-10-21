@@ -5,6 +5,7 @@ from .models import *
 from .forms import CreateUserForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from django.urls import reverse
 
 # Create your views here.
 def home(request):
@@ -28,16 +29,16 @@ def home_redirect(request):
 def usuarioPage(request):
     return render(request, 'usuarios/usuarioPage.html', usuarioPage)
 
-def login(request):
+def login_Usuario(request):
     if request.method == "POST":
         email =  request.POST.get('email')
         password = request.POST.get('password')
 
-        user =authenticate(request, email=email, password=password)
+        user =authenticate(request, username=email, password=password)
 
         if user is not None:
-            login(request, email)
-            redirect('pomodoro_view')
+            login(request, user)
+            return redirect('pomodoro')
         else :
             messages.info(request, 'Email ou Senha estão incorretos')
 
@@ -49,7 +50,7 @@ def logon(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')
+            return redirect(reverse('login'))
     else:
         form = CreateUserForm()
     return render(request, 'login/cadastro.html', {"form": form})

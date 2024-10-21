@@ -84,6 +84,10 @@ DATABASES = {
 
 AUTH_USER_MODEL = 'app_cad_usuarios.Usuario'  # Substitua pelo caminho correto da sua app
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',  # Backend padrão do Django
+    'app_cad_usuarios.backends.EmailBackend',  # Backend de login por email
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

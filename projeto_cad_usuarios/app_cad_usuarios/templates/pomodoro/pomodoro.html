@@ -8,10 +8,12 @@
    <link rel="stylesheet" href="{% static 'pomodoro/pomodoro.css' %}">
    <script src="{% static 'pomodoro/pomodoro.js' %}" defer></script>
    </head>
+   <header>
+    <img src="{%static 'images/Logo.PNG' %}" class="logo">
+    <h9 class="header-texto">PomoDojo</h9>
+    </header>
    <body>
    <div class="container">
-    
-       <!-- Caixa com o Pomodoro Timer -->
        <div class="pomodoro-box">
            <h1>Pomodoro Timer</h1>
            <div id="timer">
@@ -38,7 +40,7 @@
            </div>
        </div>
 
-       <!-- Botão para modo noturno fora da caixa -->
+       
        <button id="toggle-dark-mode">Modo Escuro</button>
    </div>
    </body>

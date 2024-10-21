@@ -1,4 +1,5 @@
 /* Estilo da caixa do Pomodoro Timer */
+
 .pomodoro-box {
     border: 2px solid #ccc; /* Removido a borda colorida */
     padding: 20px;
@@ -119,4 +120,25 @@ body.dark-mode .pomodoro-box {
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+}
+header {
+    background: #5B190A;
+    color: white;
+    font-size: large;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    top: 0;
+    position: relative;
+}
+.logo{
+    object-fit: cover;
+    height: 5%;
+    width: 5%;
+    margin-right: 5px;
+}
+.header-texto{
+    color: white;
+    font-size: xx-large;
+    font-weight: bold;
 }

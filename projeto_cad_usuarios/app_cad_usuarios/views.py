@@ -63,4 +63,7 @@ def logon(request):
 
 # Função para renderizar a página do usuário (duplicada)
 def usuarioPage(request):
-    return render(request, 'usuarios/usuarioPage.html', usuarioPage)
+    return render(request, 'usuarios/usuarioPage.html')
+
+def pomodoro_view_gambiarra(request):
+    return render(request, 'pomodoro/pomodoro.html')

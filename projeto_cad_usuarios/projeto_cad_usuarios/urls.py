@@ -35,5 +35,6 @@ urlpatterns = [
     #path('usuarios/', views.usuarios, name = 'listagem_usuarios'),
 
     path('usuarios/', views.usuarioPage, name = 'usuarioPage'),
+    path('pomodoro/', views.pomodoro_view_gambiarra, name='pomodoro'),
     path('pomodoro/', include('pomodoro.urls')),
 ]

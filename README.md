@@ -36,7 +36,7 @@
 ## Histórias
 
 <details>
-  <summary>&#x2610; Registro e Perfil do Usuário</summary>
+  <summary>&#x2611; Registro e Perfil do Usuário</summary>
   <br>
   
   __História__: "Como usuário registrado, eu gostaria de criar um perfil personalizado onde pudesse registrar minhas preferências, desafios específicos como TDAH, e metas de estudo, além de monitorar meu progresso ao longo do tempo."
@@ -57,7 +57,7 @@
 </details>
 
 <details>
-  <summary>&#x2610; Personalização dos Ciclos Pomodoro</summary>
+  <summary>&#x2611; Personalização dos Ciclos Pomodoro</summary>
   <br>
   
   __História__: "Como usuário, eu gostaria de personalizar a duração dos ciclos de trabalho e pausas do Pomodoro, incluindo a possibilidade de adicionar períodos de descanso prolongado."
@@ -111,7 +111,7 @@
 </details>
 
 <details>
-  <summary>&#x2610; Integração com Técnicas de Foco</summary>
+  <summary>&#x2611; Integração com Técnicas de Foco</summary>
   <br>
   
   __História__: "Como usuário, eu gostaria de utilizar sons de fundo calmantes ou ruído branco para melhorar minha concentração durante os ciclos de estudo."
@@ -213,7 +213,7 @@
 </details>
 
 <details>
-  <summary>&#x2610; Modo Noturno e Ajustes de Tela</summary>
+  <summary>&#x2611; Modo Noturno e Ajustes de Tela</summary>
   <br>
   
   __História__: "Como usuário, eu gostaria de ajustar o brilho, contraste e tema do aplicativo para o modo noturno ou de leitura, a fim de reduzir a fadiga ocular durante o uso prolongado."

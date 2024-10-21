@@ -7,53 +7,60 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.urls import reverse
 
-# Create your views here.
+# Função para renderizar a página inicial
 def home(request):
     return render(request, 'usuarios/usuarioPage.html')
 
+# # Função para cadastrar novos usuários
 # def usuarios(request):
 #     novo_usuario = Usuario()
 #     novo_usuario.nome = request.POST.get('nome')
 #     novo_usuario.idade = request.POST.get('idade')
 #     novo_usuario.save()
-#     #exibir todos os usuarios ja cadstrados em uma nova pagina
+#     # Recupera todos os usuários cadastrados
 #     usuarios = {
 #         'usuarios'  : Usuario.objects.all()
 #     }
-#     #retorna os dados para a pagina de listagem de usuarios
+#     # Retorna os dados para a página de listagem de usuários
 #     return render(request, 'usuarios/usuarios.html', usuarios)
 
+# Função para redirecionar o usuário para a página de login
 def home_redirect(request):
     return redirect('login')  # Nome da URL para onde deseja redirecionar
 
+# Função para renderizar a página do usuário
 def usuarioPage(request):
     return render(request, 'usuarios/usuarioPage.html', usuarioPage)
 
+# Função para autenticar e fazer login do usuário
 def login_Usuario(request):
     if request.method == "POST":
-        email =  request.POST.get('email')
-        password = request.POST.get('password')
-
-        user =authenticate(request, username=email, password=password)
+        email =  request.POST.get('email')  # Obtém o email do formulário
+        password = request.POST.get('password')  # Obtém a senha do formulário
+        
+        # Autentica o usuário com as credenciais fornecidas
+        user = authenticate(request, username=email, password=password)
 
         if user is not None:
-            login(request, user)
-            return redirect('pomodoro')
-        else :
-            messages.info(request, 'Email ou Senha estão incorretos')
+            login(request, user)  # Faz login se o usuário for autenticado
+            return render(request, 'pomodoro/pomodoro.html')  # Redireciona para a página 'pomodoro'
+            
+        else:
+            messages.info(request, 'Email ou Senha estão incorretos')  # Mensagem de erro
 
     return render(request, 'login/singin_template.html')
 
+# Função para cadastrar um novo usuário
 def logon(request):
-    
     if request.method == "POST":
-        form = CreateUserForm(request.POST)
+        form = CreateUserForm(request.POST)  # Cria um formulário com os dados enviados
         if form.is_valid():
-            form.save()
-            return redirect(reverse('login'))
+            form.save()  # Salva o novo usuário
+            return redirect(reverse('login'))  # Redireciona para a página de login
     else:
-        form = CreateUserForm()
+        form = CreateUserForm()  # Cria um formulário vazio
     return render(request, 'login/cadastro.html', {"form": form})
 
+# Função para renderizar a página do usuário (duplicada)
 def usuarioPage(request):
     return render(request, 'usuarios/usuarioPage.html', usuarioPage)

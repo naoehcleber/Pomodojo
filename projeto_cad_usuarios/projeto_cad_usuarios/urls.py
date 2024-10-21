@@ -30,6 +30,7 @@ urlpatterns = [
     path('logon/', views.logon, name='logon'),
     path('home/', views.home, name = 'home'),
 
+
     #usuarios.com/usuarios
     #path('usuarios/', views.usuarios, name = 'listagem_usuarios'),
 

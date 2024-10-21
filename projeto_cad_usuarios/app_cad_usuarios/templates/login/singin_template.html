@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="{% static 'singin_template.css' %}">
 
-    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet" crossorigin="anonymous">
 
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -180,13 +180,13 @@
         Remember me
       </label>
     </div>
-    <button class="btn btn-primary w-100 py-2" type="submit">Fazer Login</button>
+    <button class="btn btn-primary w-100 py-2" type="submit" >Fazer Login</button>
     
     <a href="{% url 'logon' %}" class="btn btn-primary w-100 py-2">Fazer Cadastro</a>
     <p class="mt-5 mb-3 text-body-secondary">© 2024 PomoDojo, All rights reserved</p>
   </form>
 </main>
-<script src="{% static 'bootstrap.bundle.min.js.download' %}" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="{% static 'bootstrap.bundle.min.js.download' %}"></script>
 
     
 

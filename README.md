@@ -250,6 +250,13 @@
   __Confirmação__: Para que o modo noturno e os ajustes de tela estejam funcionando corretamente, você deve ter configurado o brilho, contraste e tema de acordo com suas preferências. O aplicativo deve refletir essas configurações para reduzir a fadiga ocular durante o uso prolongado.
 
   <br>
+  <br>
+  
+  __Fluxograma de Sequência__:
+  
+  <img src="https://github.com/user-attachments/assets/57a902e8-7139-464c-9e87-bc74a490c82a" alt="Personalização dos Ciclos Pomodoro" width="300">
+
+  <br>
 </details>
 
 <details>

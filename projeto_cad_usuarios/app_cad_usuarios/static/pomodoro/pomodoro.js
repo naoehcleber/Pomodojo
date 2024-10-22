@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let timer; // Para armazenar o timer
-    let isRunning = false; // Para saber se o timer está em execução
-    let timeLeft = 0; // Tempo restante em segundos
+    let timer;
+    let isRunning = false;
+    let timeLeft = 0;
     const hoursInput = document.getElementById("hours");
     const minutesInput = document.getElementById("minutes");
     const secondsInput = document.getElementById("seconds");
@@ -10,20 +10,55 @@ document.addEventListener("DOMContentLoaded", () => {
     const resetButton = document.getElementById("reset");
     const setTimeButton = document.getElementById("set-time");
     const darkModeButton = document.getElementById("toggle-dark-mode");
-
-    // Função para atualizar o display do timer
+    const musicSelect = document.getElementById("music");
+   
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    let audioBuffers = {};
+    let sourceNode = null;
+   
+    // A constante audioPaths é definida no template HTML
+    // const audioPaths já está definido no template
+   
+    // Função para carregar o áudio com retorno de Promise
+    function loadAudio(url) {
+        return fetch(url)
+            .then(response => response.arrayBuffer())
+            .then(data => audioContext.decodeAudioData(data))
+            .catch(error => console.error('Erro ao carregar áudio:', error));
+    }
+   
+    // Carregar todos os áudios ao abrir a página
+    function preloadAllAudios() {
+        for (let key in audioPaths) {
+            loadAudio(audioPaths[key]).then(buffer => {
+                audioBuffers[key] = buffer;
+            });
+        }
+    }
+   
+    // Função para tocar o áudio
+    function playAudio(audioKey) {
+        if (!audioBuffers[audioKey]) return;
+   
+        sourceNode = audioContext.createBufferSource();
+        sourceNode.buffer = audioBuffers[audioKey];
+        sourceNode.connect(audioContext.destination);
+        sourceNode.start(0);
+    }
+   
     function updateDisplay() {
         const hours = Math.floor(timeLeft / 3600);
         const minutes = Math.floor((timeLeft % 3600) / 60);
         const seconds = timeLeft % 60;
         timerDisplay.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
     }
-
-    // Função que inicia o timer
+   
     function startTimer() {
-        if (isRunning) return; // Se já estiver em execução, não faz nada
+        if (isRunning) return;
         isRunning = true;
-        startStopButton.textContent = "Stop"; // Muda o texto do botão para "Stop"
+        startStopButton.textContent = "Stop";
+        playSelectedMusic();
+   
         timer = setInterval(() => {
             if (timeLeft > 0) {
                 timeLeft--;
@@ -31,60 +66,61 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 clearInterval(timer);
                 isRunning = false;
-                startStopButton.textContent = "Start"; // Reseta o botão para "Start"
-                alert("Tempo esgotado!"); // Adiciona um alerta quando o tempo acabar
+                startStopButton.textContent = "Start";
+                alert("Tempo esgotado!");
+                stopAudio();
             }
         }, 1000);
     }
-
-    // Função que para o timer
+   
     function stopTimer() {
         clearInterval(timer);
         isRunning = false;
-        startStopButton.textContent = "Start"; // Reseta o botão para "Start"
+        startStopButton.textContent = "Start";
+        stopAudio();
     }
-
-    // Função que reseta o timer
+   
+    function stopAudio() {
+        if (sourceNode) {
+            sourceNode.stop();
+            sourceNode.disconnect();
+            sourceNode = null;
+        }
+    }
+   
     function resetTimer() {
-        stopTimer(); // Para o timer
-        timeLeft = 0; // Reseta o tempo para 0
-        updateDisplay(); // Atualiza o display
+        stopTimer();
+        timeLeft = 0;
+        updateDisplay();
     }
-
-    // Define o tempo com o botão "OK"
+   
     setTimeButton.addEventListener("click", () => {
-        // Calcula o tempo total em segundos
         timeLeft = (parseInt(hoursInput.value) || 0) * 3600 + (parseInt(minutesInput.value) || 0) * 60 + (parseInt(secondsInput.value) || 0);
-        updateDisplay(); // Atualiza o display
+        updateDisplay();
     });
-
-    // Adiciona os eventos de clique
+   
     startStopButton.addEventListener("click", () => {
         if (isRunning) {
             stopTimer();
         } else {
-            startTimer(); // Inicia o timer
+            if (audioContext.state === 'suspended') {
+                audioContext.resume();
+            }
+            startTimer();
         }
     });
-
-    resetButton.addEventListener("click", () => {
-        resetTimer(); // Reseta o cronômetro
-    });
-
-    // Inicializa o display
-    updateDisplay(); // Exibe o tempo padrão ao carregar
-
-    // Função para alternar entre modo claro e escuro
+   
+    resetButton.addEventListener("click", resetTimer);
+   
+    updateDisplay();
+   
     function toggleDarkMode() {
         const body = document.body;
         const darkModeEnabled = body.classList.toggle('dark-mode');
         darkModeButton.textContent = darkModeEnabled ? "Modo Claro" : "Modo Escuro";
-
-        // Salva a preferência do modo no localStorage
         localStorage.setItem('darkMode', darkModeEnabled ? 'enabled' : 'disabled');
     }
-
-    // Verifica se o usuário tem uma preferência salva no localStorage
+   
     const savedMode = localStorage.getItem('darkMode');
     if (savedMode === 'enabled') {
         document.body.classList.add('dark-mode');
@@ -92,7 +128,16 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         darkModeButton.textContent = "Modo Escuro";
     }
-
-    // Adiciona evento de clique ao botão de modo escuro
+   
     darkModeButton.addEventListener('click', toggleDarkMode);
-});
+   
+    function playSelectedMusic() {
+        const selectedMusic = musicSelect.value;
+        if (selectedMusic === "none") return;
+   
+        playAudio(selectedMusic);
+    }
+   
+    preloadAllAudios();
+  });
+   

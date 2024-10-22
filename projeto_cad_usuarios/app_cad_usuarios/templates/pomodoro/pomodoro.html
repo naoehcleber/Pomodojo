@@ -9,9 +9,9 @@
    <script src="{% static 'pomodoro/pomodoro.js' %}" defer></script>
    </head>
    <header>
-    <img src="{%static 'images/Logo.PNG' %}" class="logo">
-    <h9 class="header-texto">PomoDojo</h9>
-    </header>
+       <img src="{% static 'images/Logo.PNG' %}" class="logo">
+       <h9 class="header-texto">PomoDojo</h9>
+   </header>
    <body>
    <div class="container">
        <div class="pomodoro-box">
@@ -39,11 +39,18 @@
                <button id="reset">Reset</button>
            </div>
        </div>
-
-       
+ 
        <button id="toggle-dark-mode">Modo Escuro</button>
    </div>
-   
+ 
+   <script>
+       // Defina os caminhos dos áudios aqui
+       const audioPaths = {
+           "white-noise": "{% static 'audios/whitenoise.mp3' %}",
+           "classical": "{% static 'audios/classica.mp3' %}",
+           "rain": "{% static 'audios/rain.mp3' %}"
+       };
+   </script>
    </body>
    </html>
 {% endblock %}

@@ -87,6 +87,13 @@
   <img src="https://github.com/user-attachments/assets/499d180c-fdeb-4e55-815c-ceee20624bb1" alt="Personalização dos Ciclos Pomodoro" width="300">
 
   <br>
+  <br>
+  
+  __Fluxograma de Sequência__:
+  
+  <img src="https://github.com/user-attachments/assets/b9cc5f1a-0903-4a52-912d-b2d324f4cd0c" alt="Personalização dos Ciclos Pomodoro" width="300">
+
+  <br>
 </details>
 
 <details>

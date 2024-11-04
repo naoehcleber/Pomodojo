@@ -11,13 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const setTimeButton = document.getElementById("set-time");
     const darkModeButton = document.getElementById("toggle-dark-mode");
     const musicSelect = document.getElementById("music");
+    const connectButton = document.getElementById("connect-button");
    
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     let audioBuffers = {};
     let sourceNode = null;
-   
-    // A constante audioPaths é definida no template HTML
-    // const audioPaths já está definido no template
+    let port; // Mova a variável para fora das funções
    
     // Função para carregar o áudio com retorno de Promise
     function loadAudio(url) {
@@ -59,6 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
         startStopButton.textContent = "Stop";
         playSelectedMusic();
    
+        // Envia o comando START para o Arduino
+        sendCommandToArduino("START");
+   
         timer = setInterval(() => {
             if (timeLeft > 0) {
                 timeLeft--;
@@ -69,6 +71,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 startStopButton.textContent = "Start";
                 alert("Tempo esgotado!");
                 stopAudio();
+   
+                // Envia o comando STOP para o Arduino quando o tempo esgota
+                sendCommandToArduino("STOP");
             }
         }, 1000);
     }
@@ -78,6 +83,9 @@ document.addEventListener("DOMContentLoaded", () => {
         isRunning = false;
         startStopButton.textContent = "Start";
         stopAudio();
+   
+        // Envia o comando STOP para o Arduino
+        sendCommandToArduino("STOP");
     }
    
     function stopAudio() {
@@ -95,7 +103,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
    
     setTimeButton.addEventListener("click", () => {
-        timeLeft = (parseInt(hoursInput.value) || 0) * 3600 + (parseInt(minutesInput.value) || 0) * 60 + (parseInt(secondsInput.value) || 0);
+        timeLeft = (parseInt(hoursInput.value) || 0) * 3600 +
+                   (parseInt(minutesInput.value) || 0) * 60 +
+                   (parseInt(secondsInput.value) || 0);
         updateDisplay();
     });
    
@@ -138,6 +148,32 @@ document.addEventListener("DOMContentLoaded", () => {
         playAudio(selectedMusic);
     }
    
+    // Função para enviar comandos para o Arduino via Web Serial
+    async function connectToArduino() {
+        if ('serial' in navigator) {
+            try {
+                port = await navigator.serial.requestPort();
+                await port.open({ baudRate: 9600 });
+                console.log("Conectado ao Arduino!");
+            } catch (error) {
+                console.error("Erro ao conectar ao Arduino:", error);
+            }
+        } else {
+            console.error("Web Serial não suportado.");
+        }
+    }
+   
+    async function sendCommandToArduino(command) {
+        if (port && port.writable) {
+            const writer = port.writable.getWriter();
+            const commandBuffer = new TextEncoder().encode(command + '\n'); // Adiciona uma nova linha
+            await writer.write(commandBuffer);
+            writer.releaseLock();
+        } else {
+            console.error("Porta não está conectada ou não é gravável.");
+        }
+    }
+   
+    connectButton.addEventListener("click", connectToArduino); // Conecta ao Arduino com um botão
     preloadAllAudios();
   });
-   

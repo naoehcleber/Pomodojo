@@ -54,6 +54,12 @@
   __Confirmação__: Para que o perfil personalizado esteja funcionando corretamente, você deve ter registrado suas preferências, desafios e metas de estudo. O sistema deve estar monitorando e atualizando seu progresso regularmente com base nas informações fornecidas.
   
   <br>
+
+  __Fluxograma de Sequência__:
+  
+  <img src="https://github.com/user-attachments/assets/7347c8b1-eadc-49af-bb25-a33d0e2de602" alt="Personalização dos Ciclos Pomodoro" width="300">
+
+  <br>
 </details>
 
 <details>
@@ -79,6 +85,13 @@
   __Sketch__:
   
   <img src="https://github.com/user-attachments/assets/499d180c-fdeb-4e55-815c-ceee20624bb1" alt="Personalização dos Ciclos Pomodoro" width="300">
+
+  <br>
+  <br>
+  
+  __Fluxograma de Sequência__:
+  
+  <img src="https://github.com/user-attachments/assets/b9cc5f1a-0903-4a52-912d-b2d324f4cd0c" alt="Personalização dos Ciclos Pomodoro" width="300">
 
   <br>
 </details>
@@ -129,10 +142,16 @@
   __Confirmação__: Para que a integração com técnicas de foco funcione, você deve ter selecionado e ativado os sons de fundo desejadas ou ruído branco. O áudio deve estar ajustado de acordo com suas preferências e ser reproduzido durante os ciclos de estudo.
 
   <br>
-  
   __Sketch__:
 
   <img src="https://github.com/user-attachments/assets/a8982860-5819-4bc8-a77d-b99f08ff2562" alt="Integração de Técnicas de Foco" width="300">
+
+  <br>
+  <br>
+  
+  __Fluxograma de Sequência__:
+  
+  <img src="https://github.com/user-attachments/assets/0c498e18-ece6-4483-b50a-6a1b3de5f3c4" alt="Personalização dos Ciclos Pomodoro" width="300">
 
   <br>
 </details>
@@ -229,6 +248,13 @@
   <br>
   
   __Confirmação__: Para que o modo noturno e os ajustes de tela estejam funcionando corretamente, você deve ter configurado o brilho, contraste e tema de acordo com suas preferências. O aplicativo deve refletir essas configurações para reduzir a fadiga ocular durante o uso prolongado.
+
+  <br>
+  <br>
+  
+  __Fluxograma de Sequência__:
+  
+  <img src="https://github.com/user-attachments/assets/57a902e8-7139-464c-9e87-bc74a490c82a" alt="Personalização dos Ciclos Pomodoro" width="300">
 
   <br>
 </details>
@@ -361,7 +387,11 @@
 
 ## Screencast
 
-https://github.com/user-attachments/assets/12d8a2f4-8312-4b47-bef0-f54aea24c1da
+
+
+https://github.com/user-attachments/assets/25b978a6-edf9-4801-8d31-8a83667a9930
+
+
 
 ## License
 

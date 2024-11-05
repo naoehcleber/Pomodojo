@@ -54,7 +54,12 @@
   __Confirmação__: Para que o perfil personalizado esteja funcionando corretamente, você deve ter registrado suas preferências, desafios e metas de estudo. O sistema deve estar monitorando e atualizando seu progresso regularmente com base nas informações fornecidas.
   
   <br>
+ __Trio Responsável__:
 
+  - João Victor Rocha
+  - João Constantino
+  - Pedro Afonso
+  <br>
   __Fluxograma de Sequência__:
   
   <img src="https://github.com/user-attachments/assets/7347c8b1-eadc-49af-bb25-a33d0e2de602" alt="Personalização dos Ciclos Pomodoro" width="300">
@@ -82,10 +87,8 @@
 
   <br>
 
-  __Dupla Responsável__:
-
-  - Ana Beatriz Romero
-  - Guilherme Barreto
+ 
+  
   
   <img src="https://github.com/user-attachments/assets/6a06b9bb-9cf4-41f8-955e-79721a841d16" alt="Relatórios e Feedback de Progresso" width="300">
   <br>
@@ -266,6 +269,10 @@
   __Confirmação__: Para que o modo noturno e os ajustes de tela estejam funcionando corretamente, você deve ter configurado o brilho, contraste e tema de acordo com suas preferências. O aplicativo deve refletir essas configurações para reduzir a fadiga ocular durante o uso prolongado.
 
   <br>
+   __Dupla Responsável__:
+
+  - Ana Beatriz Romero
+  - Guilherme Barreto
   <br>
   
   __Fluxograma de Sequência__:

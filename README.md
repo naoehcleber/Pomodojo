@@ -55,6 +55,12 @@
   
   <br>
 
+  __Dupla Responsável__:
+
+  - João Victor Rocha
+  - João Constantino
+  - Pedro Henrique
+  <br>
   __Fluxograma de Sequência__:
   
   <img src="https://github.com/user-attachments/assets/7347c8b1-eadc-49af-bb25-a33d0e2de602" alt="Personalização dos Ciclos Pomodoro" width="300">

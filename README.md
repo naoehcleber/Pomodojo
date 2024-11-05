@@ -270,7 +270,7 @@
   __Confirmação__: Para que o modo noturno e os ajustes de tela estejam funcionando corretamente, você deve ter configurado o brilho, contraste e tema de acordo com suas preferências. O aplicativo deve refletir essas configurações para reduzir a fadiga ocular durante o uso prolongado.
 
   <br>
-   __Dupla Responsável__:
+  <B>Dupla Responsável</B>:
 
   - Ana Beatriz Romero
   - Guilherme Barreto

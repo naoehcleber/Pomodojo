@@ -54,7 +54,7 @@
   __Confirmação__: Para que o perfil personalizado esteja funcionando corretamente, você deve ter registrado suas preferências, desafios e metas de estudo. O sistema deve estar monitorando e atualizando seu progresso regularmente com base nas informações fornecidas.
   
   <br>
-  __Trio Responsável__:
+  <B>Trio Responsável:</B>
 
   - João Victor Rocha
   - João Constantino

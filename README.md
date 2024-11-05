@@ -82,6 +82,14 @@
 
   <br>
 
+  __Dupla Responsável__:
+
+  - Ana Beatriz Romero
+  - Guilherme Barreto
+  
+  <img src="https://github.com/user-attachments/assets/6a06b9bb-9cf4-41f8-955e-79721a841d16" alt="Relatórios e Feedback de Progresso" width="300">
+  <br>
+
   __Sketch__:
   
   <img src="https://github.com/user-attachments/assets/499d180c-fdeb-4e55-815c-ceee20624bb1" alt="Personalização dos Ciclos Pomodoro" width="300">
@@ -142,6 +150,14 @@
   __Confirmação__: Para que a integração com técnicas de foco funcione, você deve ter selecionado e ativado os sons de fundo desejadas ou ruído branco. O áudio deve estar ajustado de acordo com suas preferências e ser reproduzido durante os ciclos de estudo.
 
   <br>
+
+  __Dupla Responsável__:
+
+  - Ana Beatriz Romero
+  - Guilherme Barreto
+  
+  <br>
+
   __Sketch__:
 
   <img src="https://github.com/user-attachments/assets/a8982860-5819-4bc8-a77d-b99f08ff2562" alt="Integração de Técnicas de Foco" width="300">

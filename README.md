@@ -54,12 +54,13 @@
   __Confirmação__: Para que o perfil personalizado esteja funcionando corretamente, você deve ter registrado suas preferências, desafios e metas de estudo. O sistema deve estar monitorando e atualizando seu progresso regularmente com base nas informações fornecidas.
   
   <br>
- __Trio Responsável__:
+  __Trio Responsável__:
 
   - João Victor Rocha
   - João Constantino
   - Pedro Afonso
   <br>
+  
   __Fluxograma de Sequência__:
   
   <img src="https://github.com/user-attachments/assets/7347c8b1-eadc-49af-bb25-a33d0e2de602" alt="Personalização dos Ciclos Pomodoro" width="300">

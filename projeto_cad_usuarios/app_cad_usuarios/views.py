@@ -63,7 +63,8 @@ def logon(request):
 
 # Função para renderizar a página do usuário (duplicada)
 def usuarioPage(request):
-    return render(request, 'usuarios/usuarioPage.html')
+    context = {}  # Certifique-se de que context é um dicionário
+    return render(request, 'usuarios/usuarioPage.html', context)
 
 def pomodoro_view_gambiarra(request):
     return render(request, 'pomodoro/pomodoro.html')

@@ -3,46 +3,64 @@
    <!DOCTYPE html>
    <html lang="en">
    <head>
-   <meta charset="UTF-8">
-   <title>Pomodoro Timer</title>
-   <link rel="stylesheet" href="{% static 'pomodoro/pomodoro.css' %}">
-   <script src="{% static 'pomodoro/pomodoro.js' %}" defer></script>
+       <meta charset="UTF-8">
+       <title>Pomodoro Timer</title>
+       <link rel="stylesheet" href="{% static 'pomodoro/pomodoro.css' %}">
+       <script src="{% static 'pomodoro/pomodoro.js' %}" defer></script>
    </head>
    <header>
-    <img src="{%static 'images/Logo.PNG' %}" class="logo">
-    <h9 class="header-texto">PomoDojo</h9>
-    </header>
+       <img src="{% static 'images/Logo.PNG' %}" class="logo" alt="Logo">
+       <h1 class="header-texto">PomoDojo</h1>
+   </header>
    <body>
-   <div class="container">
-       <div class="pomodoro-box">
-           <h1>Pomodoro Timer</h1>
-           <div id="timer">
-               <span id="timer-display">00:00:00</span>
+       <div class="container">
+           <div class="pomodoro-box">
+               <h1>Pomodoro Timer</h1>
+               <div id="timer">
+                   <span id="timer-display">00:00:00</span>
+               </div>
+               <div class="input-time">
+                   <input type="number" id="hours" placeholder="Horas" min="0" value="0">
+                   <input type="number" id="minutes" placeholder="Minutos" min="0" max="59" value="25">
+                   <input type="number" id="seconds" placeholder="Segundos" min="0" max="59" value="0">
+                   <button id="set-time">OK</button>
+               </div>
+               <div class="input-music">
+                   <label for="music">Escolha uma música:</label>
+                   <select id="music">
+                       <option value="none">Nenhuma</option>
+                       <option value="white-noise">Ruído Branco</option>
+                       <option value="classical">Música Clássica</option>
+                       <option value="rain">Barulho de Chuva</option>
+                   </select>
+               </div>
+               <div class="buttons">
+                   <button id="start-stop">Start</button>
+                   <button id="reset">Reset</button>
+               </div>
            </div>
-           <div class="input-time">
-               <input type="number" id="hours" placeholder="Horas" min="0" value="0">
-               <input type="number" id="minutes" placeholder="Minutos" min="0" max="59" value="25">
-               <input type="number" id="seconds" placeholder="Segundos" min="0" max="59" value="0">
-               <button id="set-time">OK</button>
-           </div>
-           <div class="input-music">
-               <label for="music">Escolha uma música:</label>
-               <select id="music">
-                   <option value="none">Nenhuma</option>
-                   <option value="white-noise">Ruído Branco</option>
-                   <option value="classical">Música Clássica</option>
-                   <option value="rain">Barulho de Chuva</option>
-               </select>
-           </div>
-           <div class="buttons">
-               <button id="start-stop">Start</button>
-               <button id="reset">Reset</button>
-           </div>
+
+           <button id="toggle-dark-mode">Modo Escuro</button>
+           <button id="connect-button">Conectar ao Arduino</button>
        </div>
 
-       
-       <button id="toggle-dark-mode">Modo Escuro</button>
-   </div>
+       <script>
+           // Defina os caminhos dos áudios aqui
+           const audioPaths = {
+               "white-noise": "{% static 'audios/whitenoise.mp3' %}",
+               "classical": "{% static 'audios/classica.mp3' %}",
+               "rain": "{% static 'audios/rain.mp3' %}"
+           };
+       </script>
    </body>
+   <footer>
+    <div class="nav">
+        <a href="{% url 'pomodoro' %}"><img src="{% static 'images/footer/dojo 1.svg' %}"></a>
+        <a href=""><img src="{%static 'images/footer/calendario 1.svg' %}"></a>
+        <a href=""><img src="{%static 'images/footer/5803966_checklist_clipboard_task_todo_icon 1.svg' %}"></a>
+        <a href="{% url 'usuarioPage' %}"><img src="{%static 'images/footer/perfil 1.svg' %}"></a>
+    </div>
+
+</footer>
    </html>
 {% endblock %}

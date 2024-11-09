@@ -39,11 +39,11 @@
                    <button id="reset">Reset</button>
                </div>
            </div>
- 
+
            <button id="toggle-dark-mode">Modo Escuro</button>
            <button id="connect-button">Conectar ao Arduino</button>
        </div>
- 
+
        <script>
            // Defina os caminhos dos áudios aqui
            const audioPaths = {
@@ -53,7 +53,14 @@
            };
        </script>
    </body>
+   <footer>
+    <div class="nav">
+        <a href="{% url 'pomodoro' %}"><img src="{% static 'images/footer/dojo 1.svg' %}"></a>
+        <a href=""><img src="{%static 'images/footer/calendario 1.svg' %}"></a>
+        <a href=""><img src="{%static 'images/footer/5803966_checklist_clipboard_task_todo_icon 1.svg' %}"></a>
+        <a href="{% url 'usuarioPage' %}"><img src="{%static 'images/footer/perfil 1.svg' %}"></a>
+    </div>
+
+</footer>
    </html>
 {% endblock %}
- 
-tem menu de contexto

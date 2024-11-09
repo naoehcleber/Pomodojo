@@ -12,12 +12,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const darkModeButton = document.getElementById("toggle-dark-mode");
     const musicSelect = document.getElementById("music");
     const connectButton = document.getElementById("connect-button");
+<<<<<<< HEAD
   
+=======
+   
+>>>>>>> 412ebbcca98231e058b74d2c96b2aedcd326b905
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     let audioBuffers = {};
     let sourceNode = null;
     let port; // Mova a variável para fora das funções
+<<<<<<< HEAD
   
+=======
+   
+>>>>>>> 412ebbcca98231e058b74d2c96b2aedcd326b905
     // Função para carregar o áudio com retorno de Promise
     function loadAudio(url) {
         return fetch(url)
@@ -57,10 +65,17 @@ document.addEventListener("DOMContentLoaded", () => {
         isRunning = true;
         startStopButton.textContent = "Stop";
         playSelectedMusic();
+<<<<<<< HEAD
   
         // Envia o comando START para o Arduino
         sendCommandToArduino("START");
   
+=======
+   
+        // Envia o comando START para o Arduino
+        sendCommandToArduino("START");
+   
+>>>>>>> 412ebbcca98231e058b74d2c96b2aedcd326b905
         timer = setInterval(() => {
             if (timeLeft > 0) {
                 timeLeft--;
@@ -71,7 +86,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 startStopButton.textContent = "Start";
                 alert("Tempo esgotado!");
                 stopAudio();
+<<<<<<< HEAD
   
+=======
+   
+>>>>>>> 412ebbcca98231e058b74d2c96b2aedcd326b905
                 // Envia o comando STOP para o Arduino quando o tempo esgota
                 sendCommandToArduino("STOP");
             }
@@ -83,7 +102,11 @@ document.addEventListener("DOMContentLoaded", () => {
         isRunning = false;
         startStopButton.textContent = "Start";
         stopAudio();
+<<<<<<< HEAD
   
+=======
+   
+>>>>>>> 412ebbcca98231e058b74d2c96b2aedcd326b905
         // Envia o comando STOP para o Arduino
         sendCommandToArduino("STOP");
     }
@@ -153,7 +176,11 @@ if (savedMode === 'enabled') {
   
         playAudio(selectedMusic);
     }
+<<<<<<< HEAD
   
+=======
+   
+>>>>>>> 412ebbcca98231e058b74d2c96b2aedcd326b905
     // Função para enviar comandos para o Arduino via Web Serial
     async function connectToArduino() {
         if ('serial' in navigator) {
@@ -168,7 +195,11 @@ if (savedMode === 'enabled') {
             console.error("Web Serial não suportado.");
         }
     }
+<<<<<<< HEAD
   
+=======
+   
+>>>>>>> 412ebbcca98231e058b74d2c96b2aedcd326b905
     async function sendCommandToArduino(command) {
         if (port && port.writable) {
             const writer = port.writable.getWriter();
@@ -179,7 +210,11 @@ if (savedMode === 'enabled') {
             console.error("Porta não está conectada ou não é gravável.");
         }
     }
+<<<<<<< HEAD
   
+=======
+   
+>>>>>>> 412ebbcca98231e058b74d2c96b2aedcd326b905
     connectButton.addEventListener("click", connectToArduino); // Conecta ao Arduino com um botão
     preloadAllAudios();
   });

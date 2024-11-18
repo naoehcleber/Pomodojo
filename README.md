@@ -425,3 +425,7 @@ https://github.com/user-attachments/assets/25b978a6-edf9-4801-8d31-8a83667a9930
 ## License
 
 MIT
+
+## pair programming
+### João Constantino / João Victor
+Trabalhar juntos em pair programming foi uma experiência prática e eficiente. Dividimos as funções de forma clara: enquanto um escrevia o código, o outro revisava e dava sugestões. Isso nos ajudou a identificar problemas rapidamente e melhorar o front-end da aplicação em tempo real. Teve várias situações em que ideias ou correções surgiram justamente por estarmos colaborando diretamente. No final, conseguimos entregar um trabalho mais completo e com menos retrabalho do que se tivéssemos feito tudo separados. Foi um método simples, mas que funcionou muito bem pra gente.

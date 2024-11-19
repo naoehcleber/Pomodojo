@@ -430,6 +430,10 @@ MIT
 ### João Constantino / João Victor
 Trabalhar juntos em pair programming foi uma experiência prática e eficiente. Dividimos as funções de forma clara: enquanto um escrevia o código, o outro revisava e dava sugestões. Isso nos ajudou a identificar problemas rapidamente e melhorar o front-end da aplicação em tempo real. Teve várias situações em que ideias ou correções surgiram justamente por estarmos colaborando diretamente. No final, conseguimos entregar um trabalho mais completo e com menos retrabalho do que se tivéssemos feito tudo separados. Foi um método simples, mas que funcionou muito bem pra gente.
 
-### Batriz Romero / Guilherme Barreto
+### Beatriz Romero / Guilherme Barreto
 
 O trabalho em pair programming foi altamente colaborativo e eficiente. Dividimos as tarefas de forma estratégica, com  Bia focando no front-end e  Guilherme no back-end, mas sempre mantivemos uma comunicação constante para garantir a integração entre as partes. Quando surgiam dificuldades, nos apoiávamos mutuamente, trazendo diferentes perspectivas para solucionar os problemas de forma mais rápida e assertiva. Além disso, essa troca constante de conhecimentos não apenas acelerou o desenvolvimento, mas também fortaleceu nosso entendimento sobre as diversas áreas do projeto, tornando a experiência muito enriquecedora para ambos.
+
+### Pedro Afonso
+
+Após seu par sair do curso, Pedro ficou auxiliando as duas duplas e ajustes do ReadMe

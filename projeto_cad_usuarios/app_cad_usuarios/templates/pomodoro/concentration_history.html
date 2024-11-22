@@ -1,0 +1,47 @@
+{% block conteudo %}
+   {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Concentração</title>
+    <link rel="stylesheet" href="{% static 'pomodoro/style.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.8/fullcalendar.min.css" rel="stylesheet">
+    <script src="{% static 'pomodoro/style.js' %}" defer></script>
+</head>
+<body>
+    <div class="calendar-container">
+        <header>
+            <div class="logo">
+                <div class="logo-inner"></div>
+            </div>
+            <h1>PomoDojo</h1>
+        </header>
+        <main>
+            <h2>Historico de concentração</h2>
+            <div class="month-selector">
+                <span class="arrow">&lt;</span>
+                <h3>Setembro</h3>
+            </div>
+            <div class="calendar">
+                <div class="weekdays">
+                    <span>D</span>
+                    <span>S</span>
+                    <span>T</span>
+                    <span>Q</span>
+                    <span>Q</span>
+                    <span>S</span>
+                    <span>S</span>
+                </div>
+                <div class="days">
+                    <!-- Days will be added here using JavaScript -->
+                </div>
+            </div>
+        </main>
+    </div>
+    </script>
+</body>
+</html>
+{% endblock %}

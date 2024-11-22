@@ -37,6 +37,6 @@ urlpatterns = [
     path('usuarioPage/', views.usuarioPage, name = 'usuarioPage'),
     path('pomodoro/', views.pomodoro_view_gambiarra, name='pomodoro'),
     path('pomodoro/', include('pomodoro.urls')),
-   
+    path('concentration-history/', views.concentration_history, name='concentration_history'),
 
 ]

@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5e5e5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.calendar-container {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+header {
+    background-color: #8B2635;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.logo-inner {
+    width: 15px;
+    height: 15px;
+    background-color: #8B2635;
+    border-radius: 50%;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.month-selector {
+    background-color: #E5E5E5;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.arrow {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.weekdays, .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+}
+
+.weekdays span {
+    font-weight: bold;
+    color: #666;
+    padding: 5px 0;
+}
+
+.days span {
+    padding: 8px 0;
+    position: relative;
+}
+
+.days .active::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 5px;
+    height: 5px;
+    background-color: #8B2635;
+    border-radius: 50%;
+}
+
+.days .selected {
+    background-color: #4A90E2;
+    color: white;
+    border-radius: 50%;
+}
+
+.days .inactive {
+    color: #ccc;
+}
+

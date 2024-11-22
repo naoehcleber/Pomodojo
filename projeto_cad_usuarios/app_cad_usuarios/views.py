@@ -68,3 +68,6 @@ def usuarioPage(request):
 
 def pomodoro_view_gambiarra(request):
     return render(request, 'pomodoro/pomodoro.html')
+
+def concentration_history(request):
+    return render(request, 'pomodoro/concentration_history.html')

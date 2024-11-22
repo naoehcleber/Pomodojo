@@ -31,7 +31,7 @@ class Usuario(AbstractBaseUser):
     last_name = models.TextField(max_length =50)
     email = models.TextField(max_length =50, unique=True, default='default@example.com')
     password = models.TextField(max_length=255)
-    image = models.ImageField(upload_to='app_cad_usuarios/files/userPhotos', default='files/userPhotos/defaultUser.PNG')
+    image = models.ImageField(upload_to='files/userPhotos', default='files/userPhotos/defaultUser.PNG')
     
     objects = UsuarioManager()
 

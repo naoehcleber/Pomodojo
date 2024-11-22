@@ -66,5 +66,9 @@ def usuarioPage(request):
     context = {}  # Certifique-se de que context é um dicionário
     return render(request, 'usuarios/usuarioPage.html', context)
 
+def personalizar(request):
+
+    return render
+
 def pomodoro_view_gambiarra(request):
     return render(request, 'pomodoro/pomodoro.html')

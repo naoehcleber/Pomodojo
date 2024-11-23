@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.utils.timezone import now
 
 # Create your models here.
 # class Usuario(models.Model):
@@ -10,6 +11,7 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 
 class UsuarioManager(BaseUserManager):
+    
     def create_user(self, email, first_name, last_name, password=None):
         if not email:
             raise ValueError('O usuário deve ter um endereço de email')
@@ -26,12 +28,13 @@ class UsuarioManager(BaseUserManager):
         return user
 
 class Usuario(AbstractBaseUser):
+    date_joined = models.DateTimeField(default=now)
     id_usuario = models.AutoField(primary_key = True)
     first_name = models.TextField(max_length =50)
     last_name = models.TextField(max_length =50)
     email = models.TextField(max_length =50, unique=True, default='default@example.com')
     password = models.TextField(max_length=255)
-    image = models.ImageField(upload_to='files/userPhotos', default='files/userPhotos/defaultUser.PNG')
+    image = models.ImageField(upload_to='media/files/userPhotos', default='files/userPhotos/defaultUser.PNG')
     
     objects = UsuarioManager()
 

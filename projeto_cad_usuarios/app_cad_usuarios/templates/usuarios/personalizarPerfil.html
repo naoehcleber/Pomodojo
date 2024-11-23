@@ -11,38 +11,33 @@
     
 </head>
 <body>
-    {% csrf_token %}
     <div class = "header">
         <img src="{%static 'images/Logo.PNG' %}" class="logo">
         <h9>PomoDojo</h9>
 
     </div>
     <div class="main">
-        <div class="profile">
-            <div class="profile-img">
-                <img src="{{request.user.image.url}}" class="ellipse">
-            </div>
-            <div class="profile-name">
-                <p>{{request.user.first_name}} {{request.user.last_name}}</p>
-            </div>
-            <div class="profile-date">
-                <p>Ultimo Login: {{request.user.last_login}}</p>
-            </div>
-        </div>
-        <div class="barrasDeProgresso">
-            <div class="barrasDeProgressoIndividual">
-                <p>Concentração</p>
-            </div>
-            <div class="barrasDeProgressoIndividual">
-                <p>Ciclos Concluidos</p>
-            </div>
-            <div class="barrasDeProgressoIndividual">
-                <p>Metas de ciclos</p>
-            </div>
-        </div>
-        <div>
-            <a href = "{% url 'personalizar' %}"id="personalizar" type="button"><b>Personalizar</b></a>
-        </div>
+        <div class="container">
+            <form method="post"  enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                
+                <div>
+                    <label for="first_name">Primeiro Nome</label>
+                    {{ form.first_name }}
+                </div>
+                <div>
+                    <label for="last_name">Sobrenome</label>
+                    {{ form.last_name }}
+                </div>
+                <div>
+                    <label for="image">Foto de Perfil</label>
+                    {{ form.image }}
+                    <p> {{ form.image }} </p>
+                </div>
+                <button type="submit">Salvar alterações</button>
+            </form>
+        </div>        
     </div>
 
     <div class="footer">

@@ -14,25 +14,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const darkModeButton = document.getElementById("toggle-dark-mode");
     const musicSelect = document.getElementById("music");
     const connectButton = document.getElementById("connect-button");
-    preloadAllAudios();
+   
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     let audioBuffers = {};
     let sourceNode = null;
-    let port;
-    let isSendingData = false;
-  
-    // Função para carregar o áudio
-    async function loadAudio(url) {
-        try {
-            const response = await fetch(url);
-            const data = await response.arrayBuffer();
-            return await audioContext.decodeAudioData(data);
-        } catch (error) {
-            console.error("Erro ao carregar áudio:", error);
-        }
+    let port; // Mova a variável para fora das funções
+   
+    // Função para carregar o áudio com retorno de Promise
+    function loadAudio(url) {
+        return fetch(url)
+            .then(response => response.arrayBuffer())
+            .then(data => audioContext.decodeAudioData(data))
+            .catch(error => console.error('Erro ao carregar áudio:', error));
     }
-  
-    // Pré-carregar áudios
+   
+    // Carregar todos os áudios ao abrir a página
     function preloadAllAudios() {
         for (let key in audioPaths) {
             loadAudio(audioPaths[key]).then(buffer => {
@@ -40,9 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     }
-  
+   
+    // Função para tocar o áudio
     function playAudio(audioKey) {
         if (!audioBuffers[audioKey]) return;
+   
         sourceNode = audioContext.createBufferSource();
         sourceNode.buffer = audioBuffers[audioKey];
         sourceNode.connect(audioContext.destination);
@@ -57,47 +55,41 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     function startTimer() {
-      if (isRunning) return;
-      isRunning = true;
-      startStopButton.textContent = "Stop";
-      playSelectedMusic();
-      sendCommandToArduino("START");
-  
-      console.log("Cronômetro iniciado."); // Log para debug
-  
-      timer = setInterval(() => {
-          if (timeLeft > 0) {
-              timeLeft--;
-              updateDisplay();
-          } else {
-              stopTimer();
-              alert("Tempo esgotado!");
-          }
-      }, 1000);
-  }
-  
-  
-  function stopTimer() {
-    if (timer) {
-        console.log("Parando cronômetro: limpando intervalo...");
-        clearInterval(timer);
-        timer = null;
-    } else {
-        console.log("Cronômetro já estava parado.");
+        if (isRunning) return;
+        isRunning = true;
+        startStopButton.textContent = "Stop";
+        playSelectedMusic();
+   
+        // Envia o comando START para o Arduino
+        sendCommandToArduino("START");
+   
+        timer = setInterval(() => {
+            if (timeLeft > 0) {
+                timeLeft--;
+                updateDisplay();
+            } else {
+                clearInterval(timer);
+                isRunning = false;
+                startStopButton.textContent = "Start";
+                alert("Tempo esgotado!");
+                stopAudio();
+   
+                // Envia o comando STOP para o Arduino quando o tempo esgota
+                sendCommandToArduino("STOP");
+            }
+        }, 1000);
     }
-    isRunning = false;
-    startStopButton.textContent = "Start";
-    stopAudio();
-    sendCommandToArduino("STOP");
-    console.log("Cronômetro parado com sucesso.");
-  
-    // Exibe a mensagem quando o cronômetro é parado
-    alert("Cronômetro parado.");
-  }
-  
-  
-  
-  
+   
+    function stopTimer() {
+        clearInterval(timer);
+        isRunning = false;
+        startStopButton.textContent = "Start";
+        stopAudio();
+   
+        // Envia o comando STOP para o Arduino
+        sendCommandToArduino("STOP");
+    }
+   
     function stopAudio() {
         if (sourceNode) {
             sourceNode.stop();
@@ -120,27 +112,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   
     startStopButton.addEventListener("click", () => {
-      if (isRunning) {
-          console.log("Tentativa de iniciar cronômetro, mas ele já está rodando.");
-          stopTimer();
-      } else {
-          console.log("Iniciando cronômetro pelo botão.");
-          startTimer();
-      }
-  });
-  
-  
+        if (isRunning) {
+            stopTimer();
+        } else {
+            if (audioContext.state === 'suspended') {
+                audioContext.resume();
+            }
+            startTimer();
+        }
+    });
+   
     resetButton.addEventListener("click", resetTimer);
   
     updateDisplay();
   
     function toggleDarkMode() {
         const body = document.body;
+        const footer = document.querySelector("footer"); // Seleciona o footer
         const darkModeEnabled = body.classList.toggle('dark-mode');
+        footer.classList.toggle('dark-mode', darkModeEnabled); // Aplica o dark-mode no footer
+    
         darkModeButton.textContent = darkModeEnabled ? "Modo Claro" : "Modo Escuro";
         localStorage.setItem('darkMode', darkModeEnabled ? 'enabled' : 'disabled');
     }
-  
+   
     const savedMode = localStorage.getItem('darkMode');
     if (savedMode === 'enabled') {
         document.body.classList.add('dark-mode');
@@ -148,15 +143,17 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         darkModeButton.textContent = "Modo Escuro";
     }
-  
+   
     darkModeButton.addEventListener('click', toggleDarkMode);
   
     function playSelectedMusic() {
         const selectedMusic = musicSelect.value;
         if (selectedMusic === "none") return;
+   
         playAudio(selectedMusic);
     }
-  
+   
+    // Função para enviar comandos para o Arduino via Web Serial
     async function connectToArduino() {
         if ('serial' in navigator) {
             try {
@@ -171,69 +168,18 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Web Serial não suportado.");
         }
     }
-    let isWriting = false;
-  
+   
     async function sendCommandToArduino(command) {
-      if (port && port.writable) {
-          const writer = port.writable.getWriter(); // Obtém um writer para enviar comandos
-          try {
-              const commandBuffer = new TextEncoder().encode(command + '\n');
-              await writer.write(commandBuffer);
-              console.log(`Comando enviado ao Arduino: ${command}`);
-          } catch (error) {
-              console.error("Erro ao enviar comando para o Arduino:", error);
-          } finally {
-              writer.releaseLock(); // Libera o writer, mesmo em caso de erro
-          }
-      } else {
-          console.error("Porta não está conectada ou não é gravável.");
-      }
-  }
-  
-  async function receiveFromArduino() {
-      if (port && port.readable) {
-          const reader = port.readable.getReader();
-          let buffer = ""; // Buffer para mensagens
-          let alertDisplayed = false; // Controla se o alerta já foi exibido
-  
-          try {
-              while (true) {
-                  const { value, done } = await reader.read();
-                  if (done) break;
-  
-                  buffer += new TextDecoder().decode(value);
-                  let lines = buffer.split("\n"); // Divide em linhas completas
-                  buffer = lines.pop(); // Última linha pode ser incompleta
-  
-                  for (let line of lines) {
-                      line = line.trim();
-                      console.log("Mensagem do Arduino:", line);
-  
-                      if (line === "INATIVO" && !alertDisplayed) {
-                          console.log("Mensagem recebida do Arduino: INATIVO. Parando o cronômetro.");
-  
-                          // Para o cronômetro e envia STOP para o Arduino
-                          stopTimer();
-                          await sendCommandToArduino("STOP");
-  
-                          // Exibe o alerta
-                          alertDisplayed = true; // Controla para não repetir o alerta
-                          alert("Inatividade detectada! O cronômetro foi parado.");
-  
-                          alertDisplayed = false; // Permite novos alertas no futuro
-                      }
-                  }
-              }
-          } catch (error) {
-              console.error("Erro ao ler do Arduino:", error);
-          } finally {
-              reader.releaseLock(); // Libera o reader quando terminar
-              console.log("Reiniciando leitura do Arduino...");
-              receiveFromArduino(); // Reinicia a leitura
-          }
-      }
-  }
-  
-  
-    connectButton.addEventListener("click", connectToArduino);
+        if (port && port.writable) {
+            const writer = port.writable.getWriter();
+            const commandBuffer = new TextEncoder().encode(command + '\n'); // Adiciona uma nova linha
+            await writer.write(commandBuffer);
+            writer.releaseLock();
+        } else {
+            console.error("Porta não está conectada ou não é gravável.");
+        }
+    }
+   
+    connectButton.addEventListener("click", connectToArduino); // Conecta ao Arduino com um botão
+    preloadAllAudios();
   });

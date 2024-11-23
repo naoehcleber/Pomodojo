@@ -11,6 +11,9 @@ from django.urls import reverse
 def home(request):
     return render(request, 'usuarios/usuarioPage.html')
 
+def metas(request):
+    return render(request, 'metas/metas.html')
+
 # # Função para cadastrar novos usuários
 # def usuarios(request):
 #     novo_usuario = Usuario()
@@ -65,6 +68,10 @@ def logon(request):
 def usuarioPage(request):
     context = {}  # Certifique-se de que context é um dicionário
     return render(request, 'usuarios/usuarioPage.html', context)
+
+def metas(request):
+    context = {} # Metas
+    return render(request, 'metas/metas.html', context)
 
 def pomodoro_view_gambiarra(request):
     return render(request, 'pomodoro/pomodoro.html')

@@ -29,6 +29,7 @@ urlpatterns = [
     path('login/', views.login_Usuario, name = 'login'),
     path('logon/', views.logon, name='logon'),
     path('home/', views.home, name = 'home'),
+    path('metas/', views.metas, name='metas'),
 
 
     #usuarios.com/usuarios

@@ -1,3 +1,22 @@
+/* Estilo para os campos do formulário */
+.form-control {
+    border: 2px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Estilo adicional para o botão */
+.btn-primary {
+    background-color: #4caf50;
+    border-color: #4caf50;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+    border-color: #45a049;
+}
+
 .gradient-custom-3 {
     /* fallback for old browsers */
     background: #84fab0;
@@ -18,3 +37,26 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
     }
+
+    #input{
+        display: flex;
+        height: 3rem;
+        width: 100%;
+        background-color: lightgray;
+    }
+    
+    .card{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    #cartao{
+        margin-top:16px;
+        margin-bottom: 16px;
+        max-height: 180rem;
+        max-width: 90rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+

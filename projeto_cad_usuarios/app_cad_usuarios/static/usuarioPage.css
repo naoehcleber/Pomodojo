@@ -1,7 +1,6 @@
 body{
-    height: 100%;
+    margin: 0;
 }
-
 .header {
     background: #5B190A;
     color: white;
@@ -20,16 +19,17 @@ body{
 h1{
     align-items: center;
     justify-content: center;
+    font-family: Arial, sans-serif;
 }
 
 .main {
     display: flex;
-    padding: 30%;
-    height: 55vh;
+    padding: 1%;
+    height: 30%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #e8e7fa;
+    background: white;
     color: white;
     font-size: large;
     font-family: Montserrat;
@@ -57,33 +57,25 @@ h1{
     color: rgb(138, 138, 138);
 }
 
-.barrasDeProgresso{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    text-align: center;
-    
-    
-}
 
-
-.barrasDeProgressoIndividual{
-    width: 90vw;
-    height: 5vh;
-    background-color: #F3D8B9;
-    border-radius: 1.5em;
-    color: white;
-    margin-bottom: 3vh;
-}
 
 #personalizar{
-    
+    width: 20rem;
+    background-color: #D9D9D9;
+    border-radius: 3em;
+    height: 68px;
+    border: none;
+
+}
+
+#personalizar:hover{
+    border: 2px solid #BF0F13;
 }
 
 
 
 
-.footer{
+footer{
     display: flex;
     align-items: center;
     text-align: center;

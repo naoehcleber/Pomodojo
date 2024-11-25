@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from app_cad_usuarios import views
-
+from django.urls import path
 
 urlpatterns = [
     #redireciona a pagina inicial pra login
@@ -29,10 +29,15 @@ urlpatterns = [
     path('login/', views.login_Usuario, name = 'login'),
     path('logon/', views.logon, name='logon'),
     path('home/', views.home, name = 'home'),
+    path('metas/', views.metas, name='metas'),
+
 
     #usuarios.com/usuarios
     #path('usuarios/', views.usuarios, name = 'listagem_usuarios'),
 
-    path('usuarios/', views.usuarioPage, name = 'usuarioPage'),
+    path('usuarioPage/', views.usuarioPage, name = 'usuarioPage'),
+    path('pomodoro/', views.pomodoro_view_gambiarra, name='pomodoro'),
     path('pomodoro/', include('pomodoro.urls')),
+   
+
 ]

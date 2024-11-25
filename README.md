@@ -56,7 +56,7 @@ __História__: "Como usuário , eu gostaria de me registrar no site para poder d
   
   <br>
 
-  __Dupla Responsável__:
+   <B>Trio Responsável:</B>
 
   - João Victor Rocha
   - João Constantino
@@ -84,13 +84,13 @@ __História__: "Como usuário , eu gostaria de me registrar no site para poder d
   __Confirmação__: Para que o perfil personalizado esteja funcionando corretamente, você deve ter registrado suas preferências, desafios e metas de estudo. O sistema deve estar monitorando e atualizando seu progresso regularmente com base nas informações fornecidas.
   
   <br>
-
-  __Dupla Responsável__:
+  <B>Trio Responsável:</B>
 
   - João Victor Rocha
   - João Constantino
   - Pedro Henrique
   <br>
+  
   __Fluxograma de Sequência__:
   
   <img src="https://github.com/user-attachments/assets/7347c8b1-eadc-49af-bb25-a33d0e2de602" alt="Personalização dos Ciclos Pomodoro" width="300">
@@ -118,10 +118,8 @@ __História__: "Como usuário , eu gostaria de me registrar no site para poder d
 
   <br>
 
-  __Dupla Responsável__:
-
-  - Ana Beatriz Romero
-  - Guilherme Barreto
+ 
+  
   
   <img src="https://github.com/user-attachments/assets/6a06b9bb-9cf4-41f8-955e-79721a841d16" alt="Relatórios e Feedback de Progresso" width="300">
   <br>
@@ -302,6 +300,10 @@ __História__: "Como usuário , eu gostaria de me registrar no site para poder d
   __Confirmação__: Para que o modo noturno e os ajustes de tela estejam funcionando corretamente, você deve ter configurado o brilho, contraste e tema de acordo com suas preferências. O aplicativo deve refletir essas configurações para reduzir a fadiga ocular durante o uso prolongado.
 
   <br>
+  <B>Dupla Responsável</B>:
+
+  - Ana Beatriz Romero
+  - Guilherme Barreto
   <br>
   
   __Fluxograma de Sequência__:
@@ -444,8 +446,24 @@ __História__: "Como usuário , eu gostaria de me registrar no site para poder d
 
 ## Screencast
 
-https://github.com/user-attachments/assets/12d8a2f4-8312-4b47-bef0-f54aea24c1da
+
+
+https://github.com/user-attachments/assets/25b978a6-edf9-4801-8d31-8a83667a9930
+
+
 
 ## License
 
 MIT
+
+## pair programming
+### João Constantino / João Victor
+Trabalhar juntos em pair programming foi uma experiência prática e eficiente. Dividimos as funções de forma clara: enquanto um escrevia o código, o outro revisava e dava sugestões. Isso nos ajudou a identificar problemas rapidamente e melhorar o front-end da aplicação em tempo real. Teve várias situações em que ideias ou correções surgiram justamente por estarmos colaborando diretamente. No final, conseguimos entregar um trabalho mais completo e com menos retrabalho do que se tivéssemos feito tudo separados. Foi um método simples, mas que funcionou muito bem pra gente.
+
+### Beatriz Romero / Guilherme Barreto
+
+O trabalho em pair programming foi altamente colaborativo e eficiente. Dividimos as tarefas de forma estratégica, com  Bia focando no front-end e  Guilherme no back-end, mas sempre mantivemos uma comunicação constante para garantir a integração entre as partes. Quando surgiam dificuldades, nos apoiávamos mutuamente, trazendo diferentes perspectivas para solucionar os problemas de forma mais rápida e assertiva. Além disso, essa troca constante de conhecimentos não apenas acelerou o desenvolvimento, mas também fortaleceu nosso entendimento sobre as diversas áreas do projeto, tornando a experiência muito enriquecedora para ambos.
+
+### Pedro Afonso
+
+Após seu par sair do curso, Pedro ficou auxiliando as duas duplas e ajustes do ReadMe

@@ -1,0 +1,49 @@
+{% block conteudo %}
+   {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'metas/metas.css' %}">
+    <script src="{% static 'metas/metas.js' %}" defer></script>
+    <title>Metas</title>
+</head>
+
+<header>
+    <img src="{% static 'images/Logo.PNG' %}" class="logo" alt="Logo">
+    <h1 class="header-texto">PomoDojo</h1>
+</header>
+
+<body>
+    <main>
+        <div class="title"><h1>Metas Diárias</h1></div>
+        
+        <div class="container">
+
+            <div class="task">
+             <div class="caixa"></div>
+             <p>Atividade</p>   
+            </div>
+            <div class="task">
+                <div class="caixa"></div>
+                <p>Atividade</p>   
+            </div>
+               <div class="task">
+                <div class="caixa"></div>
+                <p>Atividade</p>   
+            </div>
+
+        </div>
+    <footer>
+        <div class="nav">
+            <a href="{% url 'pomodoro' %}"><img src="{% static 'images/footer/dojo 1.svg' %}" alt="Pomodoro"></a>
+            <a href=""><img src="{% static 'images/footer/calendario 1.svg' %}" alt="Calendário"></a>
+            <a href=""><img src="{% static 'images/footer/5803966_checklist_clipboard_task_todo_icon 1.svg' %}" alt="Checklist"></a>
+            <a href="{% url 'usuarioPage' %}"><img src="{% static 'images/footer/perfil 1.svg' %}" alt="Perfil"></a>
+        </div>
+    </footer>
+    </main>
+        </body>
+    </html>
+{% endblock %}

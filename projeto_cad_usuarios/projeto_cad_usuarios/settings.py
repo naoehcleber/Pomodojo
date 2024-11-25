@@ -81,6 +81,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# settings.py
+
+LOGIN_REDIRECT_URL = '../app_cad_usuarios/templates/pomodoro/'  # Caminho da página do Pomodoro
 
 AUTH_USER_MODEL = 'app_cad_usuarios.Usuario'  # Substitua pelo caminho correto da sua app
 

@@ -36,36 +36,6 @@
 ## Histórias
 
 <details>
-  <summary>&#x2611; Registro de Usuários</summary>
-
-  <br>
-
-  __História__: "Como usuário , eu gostaria de me registrar no site para poder desfrutar de suas ferramentas e usufruir dos recursos que ele pode me apresentar."
-
-  <br>
-  
-  __Cartão__: Registro de Usuários
-
-  <br>
-  
-  __Conversa__: O sistema solicita as informações necessárias para o cadastro. O usuário preenche seus dados. O sistema valida se respeita o padrão do requisito. A conta é criada
-  
-  <br>
-
-  __Confirmação__: Para que o registro dos usuários esteja funcionando corretamente, o usuário deve preencher seus dados conforme requisitado, respeitando as limitações que o sistema lhe impõe.
-  
-  <br>
-
-   <B>Trio Responsável:</B>
-
-  - João Victor Rocha
-  - João Constantino
-  - Pedro Henrique
-  <br>
-
-<details>
-
-<details>
   <summary>&#x2611;Perfil do Usuário</summary>
   <br>
   
@@ -95,6 +65,33 @@
   
   <img src="https://github.com/user-attachments/assets/7347c8b1-eadc-49af-bb25-a33d0e2de602" alt="Personalização dos Ciclos Pomodoro" width="300">
 
+  <br>
+</details>
+
+<details>
+  <summary>&#x2611;Registro de Usuários</summary>
+  <br>
+  
+  __História__: "Como usuário , eu gostaria de me registrar no site para poder desfrutar de suas ferramentas e usufruir dos recursos que ele pode me apresentar."
+
+  <br>
+  
+  __Cartão__: Registro de Usuários
+
+  <br>
+  
+  __Conversa__: O sistema solicita as informações necessárias para o cadastro. O usuário preenche seus dados. O sistema valida se respeita o padrão do requisito. A conta é criada.
+  
+  <br>
+
+  __Confirmação__: Para que o registro dos usuários esteja funcionando corretamente, o usuário deve preencher seus dados conforme requisitado, respeitando as limitações que o sistema lhe impõe.
+  
+  <br>
+  <B>Trio Responsável:</B>
+
+  - João Victor Rocha
+  - João Constantino
+  - Pedro Henrique
   <br>
 </details>
 

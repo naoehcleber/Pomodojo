@@ -36,11 +36,11 @@
 ## Histórias
 
 <details>
-<summary>&#x2611; Registro de Usuários</summary>
+  <summary>&#x2611; Registro de Usuários</summary>
 
-<br>
+  <br>
 
-__História__: "Como usuário , eu gostaria de me registrar no site para poder desfrutar de suas ferramentas e usufruir dos recursos que ele pode me apresentar."
+  __História__: "Como usuário , eu gostaria de me registrar no site para poder desfrutar de suas ferramentas e usufruir dos recursos que ele pode me apresentar."
 
   <br>
   

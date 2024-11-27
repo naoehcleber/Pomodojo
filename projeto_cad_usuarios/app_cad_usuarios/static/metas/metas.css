@@ -1,95 +1,173 @@
 body{
-    margin: 0;
+  margin: 0;
+}
 
-}
 header {
-    background: #5B190A;
-    color: white;
-    font-size: large;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+  background: #5B190A;
+  color: white;
+  font-size: large;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
+
 .logo{
-    object-fit: cover;
-    height: 5%;
-    width: 5%;
-    margin-right: 5px;
+  object-fit: cover;
+  height: 5%;
+  width: 5%;
+  margin-right: 5px;
 }
 
 .title{
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 h1{
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 .task{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .caixa{
-    border: 1px solid #F29797;
-    height: 3rem;
-    width: 3rem;
-    border-radius: 10px;
-    background-color: #D9D9D9;
+  border: 1px solid #F29797;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 10px;
+  background-color: #D9D9D9;
 }
 
 .container{
-    height: 30rem;
-    width: 25rem;
-    background-color: #EDEDED;
-    border-radius: 15px;
-    
+  height: 30rem;
+  width: 25rem;
+  background-color: #EDEDED;
+  border-radius: 15px;
 }
 
-
 main{
-    display: flex;
-    padding: 1%;
-    height: 30%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: large;
-    font-family: Arial, sans-serif;
+  display: flex;
+  padding: 1%;
+  height: 30%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  font-family: Arial, sans-serif;
 }
 
 footer{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
-    justify-content: center;
-    padding-top: 3%;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  justify-content: center;
+  padding-top: 3%;
+  width: 100%;
+}
 
-}
 .nav{
-   width: 100%;
-   max-width: 650px;
-   height: 60px;
-   border-radius: 12px;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    background-color: #D9D9D9;
-    box-shadow: 0 5px 6px 1px #000;
+ width: 100%;
+ max-width: 650px;
+ height: 60px;
+ border-radius: 12px;
+ display: grid;
+ grid-template-columns: repeat(4,1fr);
+ background-color: #D9D9D9;
+ box-shadow: 0 5px 6px 1px #000;
 }
+
 a{
-    display: grid;
-    place-items: center;
-    text-decoration: none;
-    font-size: 32px;
-    border-radius: 5%;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  font-size: 32px;
+  border-radius: 5%;
 }
+
 a:active{
-    background-color: #BF0F13
+  background-color: #BF0F13;
 }
+
 a:hover{
-    background-color: #BF0F13;
+  background-color: #BF0F13;
+}
+
+/* Estilos para a barra de entrada de tarefas */
+#newGoal {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para o input */
+  transition: all 0.3s ease; /* Efeito suave ao focar no campo */
+}
+
+#newGoal:focus {
+  outline: none; /* Remove a borda padrão de foco */
+  border-color: #5c6bc0; /* Borda azul suave ao focar */
+  box-shadow: 0 0 5px rgba(92, 107, 192, 0.5); /* Efeito de sombra quando o campo está em foco */
+  background-color: #f9f9f9; /* Leve alteração de cor de fundo ao focar */
+}
+
+/* Estilos para a lista de tarefas */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.deleteBtn {
+  margin-left: auto;
+  background-color: #ff4444;
+  padding: 5px 10px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  background-color: #ff3333;
+}
+
+#goalForm {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #5c6bc0;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#addGoal {
+  border-radius: 0 4px 4px 0;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
 }

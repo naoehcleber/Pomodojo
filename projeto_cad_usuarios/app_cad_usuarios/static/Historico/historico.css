@@ -1,0 +1,128 @@
+/* Estilos gerais */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: #5B190A;
+  color: white;
+  font-size: large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+
+.header-texto {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  background-color: #EDEDED;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Calendário */
+.calendar-container {
+  margin-top: 30px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 20px;
+  max-width: 400px; /* Tamanho reduzido */
+  margin: 0 auto;
+}
+
+.day {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.day:hover {
+  background-color: #e0e0e0;
+}
+
+.active {
+  background-color: #0366d6;
+  color: white;
+}
+
+/* Nome do mês */
+.monthName {
+  grid-column: span 7;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+/* Dias da semana */
+.dayName {
+  text-align: center;
+  font-weight: bold;
+  color: #666;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  background-color: #D9D9D9;
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  max-width: 650px;
+  gap: 10px;
+}
+
+.nav a {
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+}
+
+.nav a img {
+  width: 30px;
+  height: 30px;
+}

@@ -9,6 +9,7 @@ from django.urls import reverse
 from django.contrib.auth.forms import UserChangeForm
 from django.views.decorators.cache import never_cache
 
+
 # Função para renderizar a página inicial
 def home(request):
     return render(request, 'usuarios/usuarioPage.html')
@@ -43,14 +44,14 @@ def login_Usuario(request):
     if request.method == "POST":
         email =  request.POST.get('email')  # Obtém o email do formulário
         password = request.POST.get('password')  # Obtém a senha do formulário
-        
+
         # Autentica o usuário com as credenciais fornecidas
         user = authenticate(request, username=email, password=password)
 
         if user is not None:
             login(request, user)  # Faz login se o usuário for autenticado
             return render(request, 'pomodoro/pomodoro.html')  # Redireciona para a página 'pomodoro'
-            
+
         else:
             messages.info(request, 'Email ou Senha estão incorretos')  # Mensagem de erro
 
@@ -96,3 +97,7 @@ def metas(request):
 
 def pomodoro_view_gambiarra(request):
     return render(request, 'pomodoro/pomodoro.html')
+
+
+def historico(request):
+    return render(request, 'historico/historico.html')

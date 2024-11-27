@@ -41,7 +41,7 @@ urlpatterns = [
     path('usuarios/', views.usuarioPage, name = 'usuarioPage'),
     path('usuarios/personalizar/', views.personalizar, name='personalizar'),  # URL para a página de personalização
     path('pomodoro/', views.pomodoro_view_gambiarra, name='pomodoro'),
-
+    path('metas/', views.metas, name = 'metas'),
     path('pomodoro/', include('pomodoro.urls')),
    
 

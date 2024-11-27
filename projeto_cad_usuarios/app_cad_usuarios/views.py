@@ -2,10 +2,12 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import inlineformset_factory
 from .models import *
-from .forms import CreateUserForm
+from .forms import CreateUserForm, UserChangeForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.urls import reverse
+from django.contrib.auth.forms import UserChangeForm
+from django.views.decorators.cache import never_cache
 
 # Função para renderizar a página inicial
 def home(request):
@@ -36,6 +38,7 @@ def usuarioPage(request):
     return render(request, 'usuarios/usuarioPage.html', usuarioPage)
 
 # Função para autenticar e fazer login do usuário
+@never_cache
 def login_Usuario(request):
     if request.method == "POST":
         email =  request.POST.get('email')  # Obtém o email do formulário
@@ -86,10 +89,10 @@ def personalizar(request):
         form = UserChangeForm(instance=request.user)
         return render(request, 'usuarios/personalizarPerfil.html', {'form': form})
 
-
 def metas(request):
     context = {} # Metas
     return render(request, 'metas/metas.html', context)
+
 
 def pomodoro_view_gambiarra(request):
     return render(request, 'pomodoro/pomodoro.html')

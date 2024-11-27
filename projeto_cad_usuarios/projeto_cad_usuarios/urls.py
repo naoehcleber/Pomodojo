@@ -43,7 +43,9 @@ urlpatterns = [
     path('pomodoro/', views.pomodoro_view_gambiarra, name='pomodoro'),
     path('metas/', views.metas, name = 'metas'),
     path('pomodoro/', include('pomodoro.urls')),
-   
+    path('historico/', views.historico, name='historico'),
+
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 if settings.DEBUG:

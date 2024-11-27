@@ -1,0 +1,57 @@
+{% block conteudo %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'historico/historico.css' %}">
+    <title>Histórico</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="{% static 'images/Logo.PNG' %}" class="logo" alt="Logo">
+        <h1 class="header-texto">PomoDojo</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Histórico de Atividades</h1>
+
+            <!-- Seção para exibir o histórico -->
+            <div id="historico">
+                <!-- O histórico será carregado no calendário -->
+            </div>
+
+            <!-- Calendário -->
+            <div class="calendar-container">
+                <h2>Calendário de Atividades</h2>
+                <div id="calendar" class="calendar"></div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="nav">
+            <a href="{% url 'pomodoro' %}">
+                <img src="{% static 'images/footer/dojo 1.svg' %}" alt="Pomodoro">
+            </a>
+            <a href="">
+                <img src="{% static 'images/footer/calendario 1.svg' %}" alt="Calendário">
+            </a>
+            <a href="">
+                <img src="{% static 'images/footer/5803966_checklist_clipboard_task_todo_icon 1.svg' %}" alt="Checklist">
+            </a>
+            <a href="{% url 'usuarioPage' %}">
+                <img src="{% static 'images/footer/perfil 1.svg' %}" alt="Perfil">
+            </a>
+        </div>
+    </footer>
+
+    <script src="{% static 'historico/historico.js' %}"></script>
+</body>
+</html>
+{% endblock %}

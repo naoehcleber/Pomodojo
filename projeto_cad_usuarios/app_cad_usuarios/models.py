@@ -28,7 +28,7 @@ class UsuarioManager(BaseUserManager):
         return user
 
 class Usuario(AbstractBaseUser):
-    date_joined = models.DateTimeField(default=now)
+    
     id_usuario = models.AutoField(primary_key = True)
     first_name = models.TextField(max_length =50)
     last_name = models.TextField(max_length =50)

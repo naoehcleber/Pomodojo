@@ -18,7 +18,7 @@
     </div>
     <div class="main">
         <div class="container">
-            <form method="post"  enctype="multipart/form-data">
+            <form method="POST"  enctype="multipart/form-data">
                 {% csrf_token %}
                 
                 
@@ -29,6 +29,10 @@
                 <div>
                     <label for="last_name">Sobrenome</label>
                     {{ form.last_name }}
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    {{ form.email }}
                 </div>
                 <div>
                     <label for="image">Foto de Perfil</label>

@@ -73,10 +73,11 @@ def usuarioPage(request):
 def personalizar(request):
     if request.method == "POST":
         form = UserChangeForm(request.POST, request.FILES, instance=request.user)
-
+        print("Formulário sendo usado:", type(form).__name__)  # Depuração
+        print("Campos no formulário:", form.fields.keys())
         if form.is_valid():
-            user = form.save(commit=False)
-            user.save()
+            
+            form.save()
             return redirect(reverse('usuarioPage'))
         else:
             print(form.errors)

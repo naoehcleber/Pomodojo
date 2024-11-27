@@ -45,7 +45,9 @@
        </div>
 
 
+
        </footer>
+
 
        <script>
            // Defina os caminhos dos áudios aqui
@@ -60,11 +62,12 @@
     <div class="nav">
         <a href="{% url 'pomodoro' %}"><img src="{% static 'images/footer/dojo 1.svg' %}"></a>
         <a href=""><img src="{%static 'images/footer/calendario 1.svg' %}"></a>
-        <a href=""><img src="{%static 'images/footer/5803966_checklist_clipboard_task_todo_icon 1.svg' %}"></a>
+        <a href="{% url 'metas' %}"><img src="{%static 'images/footer/5803966_checklist_clipboard_task_todo_icon 1.svg' %}"></a>
         <a href="{% url 'usuarioPage' %}"><img src="{%static 'images/footer/perfil 1.svg' %}"></a>
     </div>
 
 </footer>
    </html>
 
-{%endblock%}
+{% endblock %}
+

@@ -11,6 +11,7 @@
     
 </head>
 <body>
+    {% csrf_token %}
     <div class = "header">
         <img src="{%static 'images/Logo.PNG' %}" class="logo">
         <h1>PomoDojo</h1>
@@ -19,13 +20,13 @@
     <div class="main">
         <div class="profile">
             <div class="profile-img">
-                <img src="{%static 'images/Ellipse 4.PNG' %}" class="ellipse">
+                <img src="{{request.user.image.url}}" class="ellipse">
             </div>
             <div class="profile-name">
-                <p>User Name</p>
+                <p>{{request.user.first_name}} {{request.user.last_name}}</p>
             </div>
             <div class="profile-date">
-                <p>dd/mm/yyyy</p>
+                <p>Ultimo Login: {{request.user.last_login}}</p>
             </div>
         </div>
        
@@ -41,7 +42,7 @@
             </div>
         </div> -->
         <div>
-            <button id="personalizar" type="button"><b>Personalizar</b></button>
+            <a href = "{% url 'personalizar' %}"id="personalizar" type="button"><b>Personalizar</b></a>
         </div>
     </div>
 

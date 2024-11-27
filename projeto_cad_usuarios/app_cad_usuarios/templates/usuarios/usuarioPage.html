@@ -13,7 +13,7 @@
 <body>
     <div class = "header">
         <img src="{%static 'images/Logo.PNG' %}" class="logo">
-        <h9>PomoDojo</h9>
+        <h1>PomoDojo</h1>
 
     </div>
     <div class="main">
@@ -28,7 +28,8 @@
                 <p>Ultimo Login: {{request.user.last_login}}</p>
             </div>
         </div>
-        <div class="barrasDeProgresso">
+       
+        <!--<div class="barrasDeProgresso">
             <div class="barrasDeProgressoIndividual">
                 <p>Concentração</p>
             </div>
@@ -38,21 +39,21 @@
             <div class="barrasDeProgressoIndividual">
                 <p>Metas de ciclos</p>
             </div>
-        </div>
+        </div> -->
         <div>
             <button id="personalizar" type="button"><b>Personalizar</b></button>
         </div>
     </div>
 
-    <div class="footer">
+    <footer>
         <div class="nav">
             <a href="{% url 'pomodoro' %}"><img src="{% static 'images/footer/dojo 1.svg' %}"></a>
             <a href=""><img src="{%static 'images/footer/calendario 1.svg' %}"></a>
-            <a href=""><img src="{%static 'images/footer/5803966_checklist_clipboard_task_todo_icon 1.svg' %}"></a>
+            <a href="{% url 'metas' %}"><img src="{%static 'images/footer/5803966_checklist_clipboard_task_todo_icon 1.svg' %}"></a>
             <a href=""><img src="{%static 'images/footer/perfil 1.svg' %}"></a>
         </div>
 
-    </div>
+    </footer>
 
 </body>
 </html>

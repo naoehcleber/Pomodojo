@@ -11,6 +11,9 @@ from django.urls import reverse
 def home(request):
     return render(request, 'usuarios/usuarioPage.html')
 
+def metas(request):
+    return render(request, 'metas/metas.html')
+
 # # Função para cadastrar novos usuários
 # def usuarios(request):
 #     novo_usuario = Usuario()
@@ -66,9 +69,27 @@ def usuarioPage(request):
     context = {}  # Certifique-se de que context é um dicionário
     return render(request, 'usuarios/usuarioPage.html', context)
 
-def personalizar(request):
 
-    return render
+def personalizar(request):
+    if request.method == "POST":
+        form = UserChangeForm(request.POST, request.FILES, instance=request.user)
+        print("Formulário sendo usado:", type(form).__name__)  # Depuração
+        print("Campos no formulário:", form.fields.keys())
+        if form.is_valid():
+            
+            form.save()
+            return redirect(reverse('usuarioPage'))
+        else:
+            print(form.errors)
+            return render(request, 'usuarios/personalizarPerfil.html', {'form': form})
+    else:
+        form = UserChangeForm(instance=request.user)
+        return render(request, 'usuarios/personalizarPerfil.html', {'form': form})
+
+
+def metas(request):
+    context = {} # Metas
+    return render(request, 'metas/metas.html', context)
 
 def pomodoro_view_gambiarra(request):
     return render(request, 'pomodoro/pomodoro.html')

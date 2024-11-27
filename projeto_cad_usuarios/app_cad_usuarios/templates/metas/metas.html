@@ -23,15 +23,15 @@
 
             <div class="task">
              <div class="caixa"></div>
-             <p>Atividade</p>   
+             <p id="Atividade">Atividade</p>   
             </div>
             <div class="task">
                 <div class="caixa"></div>
-                <p>Atividade</p>   
+                <p id="Atividade">Atividade</p>   
             </div>
                <div class="task">
                 <div class="caixa"></div>
-                <p>Atividade</p>   
+                <p id="Atividade">Atividade</p>   
             </div>
 
         </div>
@@ -39,7 +39,7 @@
         <div class="nav">
             <a href="{% url 'pomodoro' %}"><img src="{% static 'images/footer/dojo 1.svg' %}" alt="Pomodoro"></a>
             <a href=""><img src="{% static 'images/footer/calendario 1.svg' %}" alt="Calendário"></a>
-            <a href=""><img src="{% static 'images/footer/5803966_checklist_clipboard_task_todo_icon 1.svg' %}" alt="Checklist"></a>
+            <a href="{% url 'metas' %}"><img src="{%static 'images/footer/5803966_checklist_clipboard_task_todo_icon 1.svg' %}"></a>
             <a href="{% url 'usuarioPage' %}"><img src="{% static 'images/footer/perfil 1.svg' %}" alt="Perfil"></a>
         </div>
     </footer>

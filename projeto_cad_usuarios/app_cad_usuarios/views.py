@@ -14,6 +14,9 @@ from django.views.decorators.cache import never_cache
 def home(request):
     return render(request, 'usuarios/usuarioPage.html')
 
+def historico(request):
+    return render(request, 'historico/historico.html')
+
 def metas(request):
     return render(request, 'metas/metas.html')
 

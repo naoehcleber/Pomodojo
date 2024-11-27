@@ -35,14 +35,14 @@
 
     <!-- Footer -->
     <footer>
-        <div class="nav">
+        <div class="footer">
             <a href="{% url 'pomodoro' %}">
                 <img src="{% static 'images/footer/dojo 1.svg' %}" alt="Pomodoro">
             </a>
-            <a href="">
+            <a href="{% url 'historico' %}">
                 <img src="{% static 'images/footer/calendario 1.svg' %}" alt="Calendário">
             </a>
-            <a href="">
+            <a href="{% url 'metas' %}">
                 <img src="{% static 'images/footer/5803966_checklist_clipboard_task_todo_icon 1.svg' %}" alt="Checklist">
             </a>
             <a href="{% url 'usuarioPage' %}">

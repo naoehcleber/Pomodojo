@@ -37,21 +37,26 @@ main {
 .container {
   background-color: #EDEDED;
   border-radius: 15px;
-  padding: 20px;
+  padding: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 100%;
   max-width: 900px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Calendário */
 .calendar-container {
   margin-top: 30px;
   background-color: white;
-  padding: 20px;
+  padding: 5px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
+  max-width: 700px;
 }
 
 .calendar {
@@ -101,11 +106,41 @@ main {
 }
 
 /* Footer */
-footer {
+footer{
   display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
   justify-content: center;
-  padding: 20px 0;
+  width: 100%;
+  
+}
+.footer{
+  
+  width: 100%;
+  max-width: 650px;
+  height: 60px;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
   background-color: #D9D9D9;
+  box-shadow: 0 5px 6px 1px #000;
+}
+
+a{
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  font-size: 32px;
+  border-radius: 5%;
+}
+
+a:active{
+  background-color: #BF0F13;
+}
+
+a:hover{
+  background-color: #BF0F13;
 }
 
 .nav {

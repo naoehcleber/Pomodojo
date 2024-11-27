@@ -25,6 +25,7 @@ header {
 
 h1{
   font-family: Arial, sans-serif;
+  color: white;
 }
 
 .task{
@@ -65,8 +66,9 @@ footer{
   text-align: center;
   margin: 0 auto;
   justify-content: center;
-  padding-top: 3%;
   width: 100%;
+  position: fixed;
+  
 }
 
 .nav{
@@ -152,6 +154,8 @@ li {
 #goalForm {
   display: flex;
   margin-bottom: 20px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 button {
@@ -165,9 +169,10 @@ button {
 
 #addGoal {
   border-radius: 0 4px 4px 0;
+  display: flex;
 }
 
-h1 {
+h2 {
   text-align: center;
   color: #333;
 }

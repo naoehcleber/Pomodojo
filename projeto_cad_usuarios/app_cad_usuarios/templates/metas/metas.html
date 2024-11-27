@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'metas/metas.css' %}">
     <script src="{% static 'metas/metas.js' %}" defer></script>
-    <title>Metas</title>
+    <title>Metas Diárias</title>
 </head>
 
 <header>
@@ -17,24 +17,20 @@
 
 <body>
     <main>
-        <div class="title"><h1>Metas Diárias</h1></div>
-        
         <div class="container">
+            <h1>Metas Diárias</h1>
 
-            <div class="task">
-             <div class="caixa"></div>
-             <p>Atividade</p>   
-            </div>
-            <div class="task">
-                <div class="caixa"></div>
-                <p>Atividade</p>   
-            </div>
-               <div class="task">
-                <div class="caixa"></div>
-                <p>Atividade</p>   
-            </div>
+            <!-- Formulário para adicionar novas metas -->
+            <form id="goalForm">
+                <input type="text" id="newGoal" placeholder="Digite sua meta" required>
+                <button type="submit" id="addGoal">Adicionar Meta</button>
+            </form>
 
+            <!-- Lista de metas -->
+            <ul id="goalList"></ul>
         </div>
+    </main>
+
     <footer>
         <div class="nav">
             <a href="{% url 'pomodoro' %}"><img src="{% static 'images/footer/dojo 1.svg' %}" alt="Pomodoro"></a>
@@ -43,7 +39,6 @@
             <a href="{% url 'usuarioPage' %}"><img src="{% static 'images/footer/perfil 1.svg' %}" alt="Perfil"></a>
         </div>
     </footer>
-    </main>
-        </body>
-    </html>
-{% endblock %}
+</body>
+</html>
+{% endblock %}

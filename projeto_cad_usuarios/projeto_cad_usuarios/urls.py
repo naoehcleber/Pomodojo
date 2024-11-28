@@ -45,6 +45,7 @@ urlpatterns = [
     path('pomodoro/', include('pomodoro.urls')),
     path('historico/', views.historico, name='historico'),
     path('suporte/', views.suporte, name='suporte'),
+    path('save-arduino-data/', views.save_arduino_data, name='save_arduino_data'),
 
 
 

@@ -58,4 +58,11 @@ class Metas(models.Model):
     completed = models.BooleanField(default=False)  # Whether the goal is completed
     created_at = models.DateTimeField(auto_now_add=True)  # Timestamp
 
+class DadosArduino(models.Model):
+    value = models.CharField(max_length=255)  # Dado recebido do Arduino
+    created_at = models.DateTimeField(auto_now_add=True)  # Timestamp
 
+class UsuarioArduino(models.Model):
+    state = models.CharField(max_length=25, blank=True)
+    id_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    

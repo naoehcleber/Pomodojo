@@ -115,7 +115,9 @@ def metas(request):
 
 
 def pomodoro_view_gambiarra(request):
-    return render(request, 'pomodoro/pomodoro.html')
+    data = DadosArduino.objects.all().order_by('-created_at')
+    
+    return render(request, 'pomodoro/pomodoro.html', {'data': data})
 
 
 def historico(request):
@@ -132,3 +134,14 @@ def suporte(request):
     else:
         form= TechSupport()
     return render(request, 'suporte/suporte.html', {'form':form})
+
+def save_arduino_data(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            DadosArduino.objects.create(value=data['data'])
+            return JsonResponse({'message': 'Data saved successfully!'}, status=201)
+        except KeyError:
+            return JsonResponse({'error': 'Invalid data format'}, status=400)
+    return JsonResponse({'error': 'Invalid request method'}, status=405)
+

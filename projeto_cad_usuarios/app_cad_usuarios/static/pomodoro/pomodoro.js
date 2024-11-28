@@ -179,6 +179,38 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Porta não está conectada ou não é gravável.");
         }
     }
+
+    async function GetArduinoInfo(command) {
+        while (true) {
+            try {
+                const { value, done } = await reader.read();
+                if (done) break;
+                const data = new TextDecoder().decode(value).trim();
+                dataDisplay.innerText = `Dado recebido: ${data}`;
+
+                // Enviar dado ao backend
+                fetch('/save-arduino-data/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': getCSRFToken(),
+                    },
+                    body: JSON.stringify({ data: data }),
+                });
+            } catch (err) {
+                console.error("Erro ao ler dados:", err);
+                break;
+            }
+        }
+    }
+
+    function getCSRFToken() {
+        const cookieValue = document.cookie
+            .split('; ')
+            .find(row => row.startsWith('csrftoken'))
+            ?.split('=')[1];
+        return cookieValue || '';
+    }
    
     connectButton.addEventListener("click", connectToArduino); // Conecta ao Arduino com um botão
     preloadAllAudios();

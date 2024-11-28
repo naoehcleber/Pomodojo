@@ -8,6 +8,9 @@ from django.contrib import messages
 from django.urls import reverse
 from django.contrib.auth.forms import UserChangeForm
 from django.views.decorators.cache import never_cache
+from .forms import *
+import json
+from django.http import JsonResponse
 
 
 # Função para renderizar a página inicial
@@ -94,8 +97,21 @@ def personalizar(request):
         return render(request, 'usuarios/personalizarPerfil.html', {'form': form})
 
 def metas(request):
-    context = {} # Metas
-    return render(request, 'metas/metas.html', context)
+    print("Método HTTP recebido:", request.method)  # Verifica o método HTTP
+    if request.method == 'POST':
+       
+        data = json.loads(request.body)  # Parse JSON from the request
+        goal_text = data.get('text', '').strip()
+        completed = data.get('completed', False)
+        print("Dados recebidos:", data)  # Depuração
+        if goal_text:  # Ensure the goal text is not empty
+            Metas.objects.create(user=request.user, text=goal_text, completed=completed)
+            return JsonResponse({'message': 'Goal saved successfully!'}, status=201)
+        else:
+            return JsonResponse({'error': 'Goal text is required.'}, status=400)
+    else:
+        goals = Metas.objects.filter(user=request.user)
+        return render(request, 'metas/metas.html', {'goals': goals})
 
 
 def pomodoro_view_gambiarra(request):
@@ -104,3 +120,15 @@ def pomodoro_view_gambiarra(request):
 
 def historico(request):
     return render(request, 'historico/historico.html')
+
+
+def suporte(request):
+    if request.method == 'POST':
+        form = TechSupport(request.POST)
+        if form.is_valid():
+            contact = form.save()  # Salva os dados no banco
+            print(contact)  # Exibe a instância salva
+            return redirect('suporte')
+    else:
+        form= TechSupport()
+    return render(request, 'suporte/suporte.html', {'form':form})

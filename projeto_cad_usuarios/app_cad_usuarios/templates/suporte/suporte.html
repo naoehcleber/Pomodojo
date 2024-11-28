@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'metas/metas.css' %}">
     <script src="{% static 'metas/metas.js' %}" defer></script>
-    <title>Metas Diárias</title>
+    <title>Suporte técnico</title>
 </head>
 
 <header>
@@ -17,26 +17,21 @@
 
 <body>
     <main>
-        <div class="container">
-            <h2>Metas Diárias</h2>
+        <form id="techsupport" method="POST">
+          {% csrf_token %}
+          
+          <label for="name">Nome</label>
+            {{form.name}}
+            <label for="email">email</label>
+            {{form.email}}
+            <label for="name">Telefone</label>
+            {{form.phone}}
 
-
-            <!-- Formulário para adicionar novas metas -->
-            <form id="goalForm" method="POST">
-                {% csrf_token %}
-                <input type="text" id="newGoal" placeholder="Digite sua meta" required>
-                <button type="submit" id="addGoal">Adicionar Meta</button>
-            </form>
-
-
-            <!-- Lista de metas -->
-            <ul id="goalList"></ul>
-        </div>
+          <button type="submit"> Enviar</button>  
+        </form>
     </main>
 
-    <div id="suporte">
-        <a href="{% url 'suporte' %}">Suporte</a>
-    </div>
+    
 
     <footer>
         <div class="nav">

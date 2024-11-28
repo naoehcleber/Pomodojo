@@ -44,6 +44,7 @@ urlpatterns = [
     path('metas/', views.metas, name = 'metas'),
     path('pomodoro/', include('pomodoro.urls')),
     path('historico/', views.historico, name='historico'),
+    path('suporte/', views.suporte, name='suporte'),
 
 
 

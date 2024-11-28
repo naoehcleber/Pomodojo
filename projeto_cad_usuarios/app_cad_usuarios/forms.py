@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
-from .models import Usuario
+from .models import Usuario, Contact
 
 class CreateUserForm(UserCreationForm):
     class Meta:
@@ -49,4 +49,12 @@ class UserChangeForm(forms.ModelForm):
             return cleaned_data
     
     
-
+class TechSupport(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ['name', 'email', 'phone', ]
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Seu nome'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Seu email'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Seu telefone'}),
+        }

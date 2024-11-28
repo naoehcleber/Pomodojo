@@ -40,3 +40,22 @@ class Usuario(AbstractBaseUser):
 
     USERNAME_FIELD = 'email'  # Define o campo utilizado para login
     REQUIRED_FIELDS = ['first_name', 'last_name']  # Campos exigidos além do email
+
+class Contact(models.Model):
+    id_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    phone = models.CharField(max_length=15,blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.email}"  # Mostra o nome e email
+    
+class Metas(models.Model):
+    id_meta = models.AutoField(primary_key = True)
+    user = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    text = models.CharField(max_length=255)  # The goal text
+    completed = models.BooleanField(default=False)  # Whether the goal is completed
+    created_at = models.DateTimeField(auto_now_add=True)  # Timestamp
+
+

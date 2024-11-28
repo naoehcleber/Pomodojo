@@ -63,7 +63,7 @@
   
   __Fluxograma de Sequência__:
   
-  <img src="https://github.com/user-attachments/assets/7347c8b1-eadc-49af-bb25-a33d0e2de602" alt="Personalização dos Ciclos Pomodoro" width="300">
+  <img src="https://github.com/user-attachments/assets/942b5a27-0505-45c6-b46f-688c395cefdd" alt="Personalização dos Ciclos Pomodoro" width="300">
 
   <br>
 </details>
@@ -168,7 +168,15 @@
   - João Constantino
   <br>
 
+  __Fluxograma de Sequência__:
+  
+  <img src="https://github.com/user-attachments/assets/d02cb0d6-ee57-4655-a405-10d01144db90" alt="Personalização dos Ciclos Pomodoro" width="300">
+
+  <br>
+
+
   __Sketch__:
+  
   
   <img src="https://github.com/user-attachments/assets/8e6561a4-6660-48cb-b352-2c9d6a68b35d" alt="Metas Diárias" width="300">
 

@@ -93,6 +93,11 @@
   - João Constantino
   - Pedro Henrique
   <br>
+
+  __Fluxograma de Sequência__:
+  
+  <img src="https://github.com/user-attachments/assets/7347c8b1-eadc-49af-bb25-a33d0e2de602" alt="Personalização dos Ciclos Pomodoro" width="300">
+  <br>
 </details>
 
 <details>
@@ -115,8 +120,11 @@
 
   <br>
 
- 
-  
+  __Dupla Responsável__:
+
+  - Ana Beatriz Romero
+  - Guilherme Barreto
+  <br>
   
   <img src="https://github.com/user-attachments/assets/6a06b9bb-9cf4-41f8-955e-79721a841d16" alt="Relatórios e Feedback de Progresso" width="300">
   <br>
@@ -136,7 +144,7 @@
 </details>
 
 <details>
-  <summary>&#x2610; Tarefas e Metas Diárias</summary>
+  <summary>&#x2611; Tarefas e Metas Diárias</summary>
   <br>
   
   __História__: "Como usuário, eu gostaria de criar e gerenciar listas de tarefas, definir prioridades e estabelecer metas diárias ou semanais para manter meu foco e organização."
@@ -153,6 +161,11 @@
   
   __Confirmação__: Para que a funcionalidade de tarefas e metas diárias esteja funcionando corretamente, você deve ter criado suas listas de tarefas e definido as prioridades. Além disso, as metas diárias ou semanais devem estar visíveis e atualizadas conforme as tarefas são marcadas como concluídas.
 
+  <br>
+  <B>Trio Responsável:</B>
+
+  - João Victor Rocha
+  - João Constantino
   <br>
 
   __Sketch__:
@@ -437,7 +450,7 @@
 </details>
 
 <details>
-  <summary>&#x2610; Segredo ??????</summary>
+  <summary>&#x2611; Segredo ??????</summary>
   <br>
 </details>
 

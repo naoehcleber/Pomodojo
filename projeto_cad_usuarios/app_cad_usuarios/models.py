@@ -47,6 +47,7 @@ class Contact(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=15,blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    comentario = models.CharField(max_length=500,blank=True)
 
     def __str__(self):
         return f"{self.name} - {self.email}"  # Mostra o nome e email
@@ -65,4 +66,3 @@ class DadosArduino(models.Model):
 class UsuarioArduino(models.Model):
     state = models.CharField(max_length=25, blank=True)
     id_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-    

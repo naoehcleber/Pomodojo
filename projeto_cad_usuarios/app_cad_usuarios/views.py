@@ -128,8 +128,11 @@ def suporte(request):
     if request.method == 'POST':
         form = TechSupport(request.POST)
         if form.is_valid():
-            contact = form.save()  # Salva os dados no banco
+            contact = form.save(commit=False)  # Salva os dados no banco
+            contact.id_usuario = request.user  # Associa o usuário atual
+
             print(contact)  # Exibe a instância salva
+            contact.save()
             return redirect('suporte')
     else:
         form= TechSupport()

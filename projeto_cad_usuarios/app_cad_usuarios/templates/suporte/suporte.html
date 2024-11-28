@@ -20,12 +20,14 @@
         <form id="techsupport" method="POST">
           {% csrf_token %}
           
-          <label for="name">Nome</label>
+            <label for="name">Nome</label>
             {{form.name}}
             <label for="email">email</label>
             {{form.email}}
             <label for="name">Telefone</label>
             {{form.phone}}
+            <label for="comentario">Digite seu problema :</label>
+            {{form.comentario}}
 
           <button type="submit"> Enviar</button>  
         </form>

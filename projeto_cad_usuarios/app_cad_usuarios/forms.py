@@ -52,9 +52,10 @@ class UserChangeForm(forms.ModelForm):
 class TechSupport(forms.ModelForm):
     class Meta:
         model = Contact
-        fields = ['name', 'email', 'phone', ]
+        fields = ['name', 'email', 'phone', 'comentario']
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Seu nome'}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Seu email'}),
             'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Seu telefone'}),
+            'comentario': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Seu problema'}),
         }

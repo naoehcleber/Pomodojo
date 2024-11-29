@@ -139,6 +139,10 @@ footer.dark-mode a:active {
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 header {
     background: #5B190A;
@@ -149,6 +153,7 @@ header {
     display: flex;
     top: 0;
     position: relative;
+    width: 100%;
 }
 .logo{
     object-fit: cover;
@@ -173,6 +178,19 @@ footer{
     margin-bottom: 1%;
 
 }
+
+#suporte a{
+    width: 300px;
+    background-color: #D9D9D9;
+    border-radius: 12px;
+    margin-top: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #suporte a:hover{
+    background-color: #BF0F13;
+  }
 
 .nav{
     width: 100%;

@@ -176,3 +176,16 @@ h2 {
   text-align: center;
   color: #333;
 }
+
+#suporte a{
+  width: 300px;
+  background-color: #D9D9D9;
+  border-radius: 12px;
+  margin-top: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+#suporte a:hover{
+  background-color: #BF0F13;
+}

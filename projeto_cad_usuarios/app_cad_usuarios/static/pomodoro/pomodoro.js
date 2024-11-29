@@ -15,20 +15,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     const musicSelect = document.getElementById("music");
     const connectButton = document.getElementById("connect-button");
 
-   
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     let audioBuffers = {};
     let sourceNode = null;
-    let port; // Mova a variável para fora das funções
-    
-    const response = await fetch('/get-user-level/', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRFToken': getCSRFToken(),  // Certifique-se de que o token está presente
-        },
-    });
-
+    let port;
 
     async function getUserLvl() {
         try {
@@ -39,11 +29,11 @@ document.addEventListener("DOMContentLoaded", async () => {
                     'X-CSRFToken': getCSRFToken(),
                 },
             });
-    
+
             if (!response.ok) {
                 throw new Error('Erro na requisição: ' + response.statusText);
             }
-    
+
             const data = await response.json();
             if (data.level != null) {
                 return data.level; // Retorna o nível do usuário
@@ -56,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             return null;
         }
     }
-    
+
     async function incrementUserCiclos() {
         try {
             const response = await fetch('/increment-ciclos/', {
@@ -66,41 +56,33 @@ document.addEventListener("DOMContentLoaded", async () => {
                     'X-CSRFToken': getCSRFToken(),
                 },
             });
-    
+
             if (!response.ok) {
-                const contentType = response.headers.get('Content-Type')
+                const contentType = response.headers.get('Content-Type');
                 if (contentType && contentType.includes('application/json')) {
-                // return a rejected Promise that includes the JSON
-                return response.json().then((json) => Promise.reject(json));
-                //throw new Error('Erro na requisição: ' + response.statusText);
+                    return response.json().then((json) => Promise.reject(json));
                 }
             }
-    
+
             const data = await response.json();
             if (data.ciclos !== undefined) {
                 console.log('Ciclos incrementados:', data.ciclos);
-                return data.ciclos; // Retorna o novo valor de ciclos
+                return data.ciclos;
             } else {
                 console.error('Erro ao incrementar ciclos:', data.error);
             }
-        }
-        catch (error) {
+        } catch (error) {
             console.error('Erro na função incrementUserCiclos:', error);
         }
     }
-    
 
-
-
-    // Função para carregar o áudio com retorno de Promise
     function loadAudio(url) {
         return fetch(url)
             .then(response => response.arrayBuffer())
             .then(data => audioContext.decodeAudioData(data))
             .catch(error => console.error('Erro ao carregar áudio:', error));
     }
-   
-    // Carregar todos os áudios ao abrir a página
+
     function preloadAllAudios() {
         for (let key in audioPaths) {
             loadAudio(audioPaths[key]).then(buffer => {
@@ -108,33 +90,30 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
         }
     }
-   
-    // Função para tocar o áudio
+
     function playAudio(audioKey) {
         if (!audioBuffers[audioKey]) return;
-   
+
         sourceNode = audioContext.createBufferSource();
         sourceNode.buffer = audioBuffers[audioKey];
         sourceNode.connect(audioContext.destination);
         sourceNode.start(0);
     }
-  
+
     function updateDisplay() {
         const hours = Math.floor(timeLeft / 3600);
         const minutes = Math.floor((timeLeft % 3600) / 60);
         const seconds = timeLeft % 60;
         timerDisplay.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
     }
-  
+
     function startTimer() {
         if (isRunning) return;
         isRunning = true;
         startStopButton.textContent = "Stop";
         playSelectedMusic();
-   
-        // Envia o comando START para o Arduino
         sendCommandToArduino("START");
-   
+
         timer = setInterval(() => {
             if (timeLeft > 0) {
                 timeLeft--;
@@ -153,23 +132,19 @@ document.addEventListener("DOMContentLoaded", async () => {
                     }
                 });
                 stopAudio();
-   
-                // Envia o comando STOP para o Arduino quando o tempo esgota
                 sendCommandToArduino("STOP");
             }
         }, 1000);
     }
-   
+
     function stopTimer() {
         clearInterval(timer);
         isRunning = false;
         startStopButton.textContent = "Start";
         stopAudio();
-   
-        // Envia o comando STOP para o Arduino
         sendCommandToArduino("STOP");
     }
-   
+
     function stopAudio() {
         if (sourceNode) {
             sourceNode.stop();
@@ -177,20 +152,20 @@ document.addEventListener("DOMContentLoaded", async () => {
             sourceNode = null;
         }
     }
-  
+
     function resetTimer() {
         stopTimer();
         timeLeft = 0;
         updateDisplay();
     }
-  
+
     setTimeButton.addEventListener("click", () => {
         timeLeft = (parseInt(hoursInput.value) || 0) * 3600 +
             (parseInt(minutesInput.value) || 0) * 60 +
             (parseInt(secondsInput.value) || 0);
         updateDisplay();
     });
-  
+
     startStopButton.addEventListener("click", () => {
         if (isRunning) {
             stopTimer();
@@ -201,21 +176,21 @@ document.addEventListener("DOMContentLoaded", async () => {
             startTimer();
         }
     });
-   
+
     resetButton.addEventListener("click", resetTimer);
-  
+
     updateDisplay();
-  
+
     function toggleDarkMode() {
         const body = document.body;
-        const footer = document.querySelector("footer"); // Seleciona o footer
+        const footer = document.querySelector("footer");
         const darkModeEnabled = body.classList.toggle('dark-mode');
-        footer.classList.toggle('dark-mode', darkModeEnabled); // Aplica o dark-mode no footer
-    
+        footer.classList.toggle('dark-mode', darkModeEnabled);
+
         darkModeButton.textContent = darkModeEnabled ? "Modo Claro" : "Modo Escuro";
         localStorage.setItem('darkMode', darkModeEnabled ? 'enabled' : 'disabled');
     }
-   
+
     const savedMode = localStorage.getItem('darkMode');
     if (savedMode === 'enabled') {
         document.body.classList.add('dark-mode');
@@ -223,17 +198,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     } else {
         darkModeButton.textContent = "Modo Escuro";
     }
-   
+
     darkModeButton.addEventListener('click', toggleDarkMode);
-  
+
     function playSelectedMusic() {
         const selectedMusic = musicSelect.value;
         if (selectedMusic === "none") return;
-   
+
         playAudio(selectedMusic);
     }
-   
-    // Função para enviar comandos para o Arduino via Web Serial
+
     async function connectToArduino() {
         if ('serial' in navigator) {
             try {
@@ -248,11 +222,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             console.error("Web Serial não suportado.");
         }
     }
-   
+
     async function sendCommandToArduino(command) {
         if (port && port.writable) {
             const writer = port.writable.getWriter();
-            const commandBuffer = new TextEncoder().encode(command + '\n'); // Adiciona uma nova linha
+            const commandBuffer = new TextEncoder().encode(command + '\n');
             await writer.write(commandBuffer);
             writer.releaseLock();
         } else {
@@ -260,29 +234,60 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
-    async function GetArduinoInfo(command) {
-        while (true) {
+    async function receiveFromArduino() {
+        if (port && port.readable) {
+            const reader = port.readable.getReader();
+            let messageBuffer = '';
+    
             try {
-                const { value, done } = await reader.read();
-                if (done) break;
-                const data = new TextDecoder().decode(value).trim();
-                dataDisplay.innerText = `Dado recebido: ${data}`;
-
-                // Enviar dado ao backend
-                fetch('/save-arduino-data/', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRFToken': getCSRFToken(),
-                    },
-                    body: JSON.stringify({ data: data }),
-                });
-            } catch (err) {
-                console.error("Erro ao ler dados:", err);
-                break;
+                while (port.readable.locked) { // Verifica se a porta ainda está aberta
+                    const { value, done } = await reader.read();
+                    if (done) {
+                        console.log("Leitura da porta encerrada.");
+                        break;
+                    }
+    
+                    // Adiciona dados ao buffer e processa mensagens completas
+                    messageBuffer += new TextDecoder().decode(value, { stream: true });
+    
+                    let newlineIndex;
+                    while ((newlineIndex = messageBuffer.indexOf('\n')) >= 0) {
+                        const completeMessage = messageBuffer.slice(0, newlineIndex).trim();
+                        messageBuffer = messageBuffer.slice(newlineIndex + 1);
+    
+                        console.log("Mensagem completa recebida:", completeMessage);
+    
+                        if (completeMessage === "INATIVO") {
+                            console.log("Mensagem 'INATIVO' recebida. Parando o cronômetro...");
+                            stopTimer();
+                        }
+    
+                        // Salva dados recebidos
+                        await fetch('/save-arduino-data/', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRFToken': getCSRFToken(),
+                            },
+                            body: JSON.stringify({ data: completeMessage }),
+                        }).catch(error => console.error('Erro ao salvar dados do Arduino:', error));
+                    }
+                }
+            } catch (error) {
+                console.error("Erro na leitura da porta:", error);
+                // Reinicia o Arduino em caso de erro de leitura
+                if (port) {
+                    await port.close();
+                    console.log("Porta fechada após erro.");
+                }
+            } finally {
+                reader.releaseLock();
             }
+        } else {
+            console.error("Porta não está conectada ou não é legível.");
         }
     }
+    
 
     function getCSRFToken() {
         const cookieValue = document.cookie
@@ -291,7 +296,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             ?.split('=')[1];
         return cookieValue || '';
     }
-   
-    connectButton.addEventListener("click", connectToArduino); // Conecta ao Arduino com um botão
+
+    connectButton.addEventListener("click", connectToArduino);
     preloadAllAudios();
-  });
+});

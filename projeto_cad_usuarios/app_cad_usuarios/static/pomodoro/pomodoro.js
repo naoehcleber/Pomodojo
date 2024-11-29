@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     let timer;
     let isRunning = false;
     let timeLeft = 0;
@@ -20,7 +20,16 @@ document.addEventListener("DOMContentLoaded", () => {
     let audioBuffers = {};
     let sourceNode = null;
     let port; // Mova a variável para fora das funções
-   
+    
+    const response = await fetch('/get-user-level/', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCSRFToken(),  // Certifique-se de que o token está presente
+        },
+    });
+
+
     async function getUserLvl() {
         try {
             const response = await fetch('/get-user-level/', {
@@ -36,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
     
             const data = await response.json();
-            if (data.level) {
+            if (data.level != null) {
                 return data.level; // Retorna o nível do usuário
             } else {
                 console.error('Erro ao obter nível do usuário:', data.error);
@@ -59,7 +68,12 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     
             if (!response.ok) {
-                throw new Error('Erro na requisição: ' + response.statusText);
+                const contentType = response.headers.get('Content-Type')
+                if (contentType && contentType.includes('application/json')) {
+                // return a rejected Promise that includes the JSON
+                return response.json().then((json) => Promise.reject(json));
+                //throw new Error('Erro na requisição: ' + response.statusText);
+                }
             }
     
             const data = await response.json();
@@ -69,7 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 console.error('Erro ao incrementar ciclos:', data.error);
             }
-        } catch (error) {
+        }
+        catch (error) {
             console.error('Erro na função incrementUserCiclos:', error);
         }
     }

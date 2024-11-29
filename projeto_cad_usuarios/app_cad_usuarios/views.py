@@ -11,6 +11,7 @@ from django.views.decorators.cache import never_cache
 from .forms import *
 import json
 from django.http import JsonResponse
+import logging
 
 
 # Função para renderizar a página inicial
@@ -93,7 +94,7 @@ def personalizar(request):
             print(form.errors)
             return render(request, 'usuarios/personalizarPerfil.html', {'form': form})
     else:
-        form = UserChangeForm(instance=request.user)
+        form = UserChangeForm(instance=request.Usuario)
         return render(request, 'usuarios/personalizarPerfil.html', {'form': form})
 
 def metas(request):
@@ -105,7 +106,7 @@ def metas(request):
         completed = data.get('completed', False)
         print("Dados recebidos:", data)  # Depuração
         if goal_text:  # Ensure the goal text is not empty
-            Metas.objects.create(user=request.user, text=goal_text, completed=completed)
+            Metas.objects.create(user=request.Usuario, text=goal_text, completed=completed)
             return JsonResponse({'message': 'Goal saved successfully!'}, status=201)
         else:
             return JsonResponse({'error': 'Goal text is required.'}, status=400)
@@ -119,22 +120,32 @@ def pomodoro_view_gambiarra(request):
     
     return render(request, 'pomodoro/pomodoro.html', {'data': data})
 
+logger = logging.getLogger(__name__)
 
 def get_user_level(request):
     if request.method == 'GET':
-        # Exemplo: Pegue o nível do usuário atual no banco de dados
-        user_level = request.user.ciclos  # Substitua 'profile.level' pelo campo correto
-        return JsonResponse({'level': user_level})
-    return JsonResponse({'error': 'Invalid request method.'}, status=405)
+        try:
+            logger.info(f"Usuário autenticado: {request.Usuario.email}")
+            user_level = request.Usuario.ciclos  # Substitua pelo campo correto
+            logger.info(f"Nível do usuário {request.Usuario.email}: {user_level}")
+            return JsonResponse({'level': user_level}, status=200)
+        except AttributeError as e:
+            logger.error(f"Erro: {str(e)}")
+            return JsonResponse({'error': 'Perfil do usuário não encontrado.'}, status=400)
+    logger.warning("Método inválido usado")
+    return JsonResponse({'error': 'Método inválido.'}, status=405)
 
 def increment_ciclos(request):
     if request.method == 'POST':
         try:
             # Atualiza o campo ciclos do usuário logado
-            profile = request.user.ciclos
+            profile = request.Usuario.ciclos
+            logger.info(f"Ciclos antes do incremento: {profile.ciclos}")
+
             profile.ciclos += 1
+            logger.info(f"Ciclos depois do incremento: {profile.ciclos}")
             profile.save()
-            return JsonResponse({'message': 'Ciclos incrementados com sucesso!', 'ciclos': profile.ciclos})
+            return JsonResponse({'message': 'Ciclos incrementados com sucesso!', 'ciclos': profile.ciclos}, status=200)
         except Exception as e:
             return JsonResponse({'error': f'Ocorreu um erro: {str(e)}'}, status=400)
     return JsonResponse({'error': 'Método inválido.'}, status=405)
@@ -148,7 +159,7 @@ def suporte(request):
         form = TechSupport(request.POST)
         if form.is_valid():
             contact = form.save(commit=False)  # Salva os dados no banco
-            contact.id_usuario = request.user  # Associa o usuário atual
+            contact.id_usuario = request.Usuario  # Associa o usuário atual
 
             print(contact)  # Exibe a instância salva
             contact.save()

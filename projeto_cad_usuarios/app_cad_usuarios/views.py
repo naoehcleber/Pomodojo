@@ -120,6 +120,25 @@ def pomodoro_view_gambiarra(request):
     return render(request, 'pomodoro/pomodoro.html', {'data': data})
 
 
+def get_user_level(request):
+    if request.method == 'GET':
+        # Exemplo: Pegue o nível do usuário atual no banco de dados
+        user_level = request.user.ciclos  # Substitua 'profile.level' pelo campo correto
+        return JsonResponse({'level': user_level})
+    return JsonResponse({'error': 'Invalid request method.'}, status=405)
+
+def increment_ciclos(request):
+    if request.method == 'POST':
+        try:
+            # Atualiza o campo ciclos do usuário logado
+            profile = request.user.ciclos
+            profile.ciclos += 1
+            profile.save()
+            return JsonResponse({'message': 'Ciclos incrementados com sucesso!', 'ciclos': profile.ciclos})
+        except Exception as e:
+            return JsonResponse({'error': f'Ocorreu um erro: {str(e)}'}, status=400)
+    return JsonResponse({'error': 'Método inválido.'}, status=405)
+
 def historico(request):
     return render(request, 'historico/historico.html')
 

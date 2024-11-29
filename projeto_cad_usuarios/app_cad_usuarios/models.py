@@ -35,7 +35,7 @@ class Usuario(AbstractBaseUser):
     email = models.TextField(max_length =50, unique=True, default='default@example.com')
     password = models.TextField(max_length=255)
     image = models.ImageField(upload_to='media/files/userPhotos', default='files/userPhotos/defaultUser.PNG')
-    
+    ciclos = models.IntegerField(default=0)
     objects = UsuarioManager()
 
     USERNAME_FIELD = 'email'  # Define o campo utilizado para login
@@ -58,6 +58,11 @@ class Metas(models.Model):
     text = models.CharField(max_length=255)  # The goal text
     completed = models.BooleanField(default=False)  # Whether the goal is completed
     created_at = models.DateTimeField(auto_now_add=True)  # Timestamp
+
+class UsuarioNivel(models.Model):
+    id_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    
+
 
 class DadosArduino(models.Model):
     value = models.CharField(max_length=255)  # Dado recebido do Arduino

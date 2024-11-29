@@ -46,6 +46,9 @@ urlpatterns = [
     path('historico/', views.historico, name='historico'),
     path('suporte/', views.suporte, name='suporte'),
     path('save-arduino-data/', views.save_arduino_data, name='save_arduino_data'),
+    path('get-user-level/', views.get_user_level, name='get_user_level'),
+    path('increment-ciclos/', views.increment_ciclos, name='increment_ciclos'),
+
 
 
 

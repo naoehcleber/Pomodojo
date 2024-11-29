@@ -14,12 +14,69 @@ document.addEventListener("DOMContentLoaded", () => {
     const darkModeButton = document.getElementById("toggle-dark-mode");
     const musicSelect = document.getElementById("music");
     const connectButton = document.getElementById("connect-button");
+
    
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     let audioBuffers = {};
     let sourceNode = null;
     let port; // Mova a variável para fora das funções
    
+    async function getUserLvl() {
+        try {
+            const response = await fetch('/get-user-level/', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCSRFToken(),
+                },
+            });
+    
+            if (!response.ok) {
+                throw new Error('Erro na requisição: ' + response.statusText);
+            }
+    
+            const data = await response.json();
+            if (data.level) {
+                return data.level; // Retorna o nível do usuário
+            } else {
+                console.error('Erro ao obter nível do usuário:', data.error);
+                return null;
+            }
+        } catch (error) {
+            console.error('Erro na função getUserLvl:', error);
+            return null;
+        }
+    }
+    
+    async function incrementUserCiclos() {
+        try {
+            const response = await fetch('/increment-ciclos/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCSRFToken(),
+                },
+            });
+    
+            if (!response.ok) {
+                throw new Error('Erro na requisição: ' + response.statusText);
+            }
+    
+            const data = await response.json();
+            if (data.ciclos !== undefined) {
+                console.log('Ciclos incrementados:', data.ciclos);
+                return data.ciclos; // Retorna o novo valor de ciclos
+            } else {
+                console.error('Erro ao incrementar ciclos:', data.error);
+            }
+        } catch (error) {
+            console.error('Erro na função incrementUserCiclos:', error);
+        }
+    }
+    
+
+
+
     // Função para carregar o áudio com retorno de Promise
     function loadAudio(url) {
         return fetch(url)
@@ -72,6 +129,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 isRunning = false;
                 startStopButton.textContent = "Start";
                 alert("Tempo esgotado!");
+                getUserLvl().then(userLevel => {
+                    console.log('User Level:', userLevel);
+                    if (userLevel !== null) {
+                        incrementUserCiclos().then(newCiclos => {
+                            console.log('Novo valor de ciclos:', newCiclos);
+                        });
+                    }
+                });
                 stopAudio();
    
                 // Envia o comando STOP para o Arduino quando o tempo esgota

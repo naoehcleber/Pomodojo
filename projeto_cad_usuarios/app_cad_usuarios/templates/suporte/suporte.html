@@ -15,7 +15,7 @@
     <h1 class="header-texto">PomoDojo</h1>
 </header>
 
-<body>
+<div id="body">
     <main>
         <form id="techsupport" method="POST">
           {% csrf_token %}
@@ -43,6 +43,6 @@
             <a href="{% url 'usuarioPage' %}"><img src="{% static 'images/footer/perfil 1.svg' %}" alt="Perfil"></a>
         </div>
     </footer>
-</body>
+</div>
 </html>
 {% endblock %}
